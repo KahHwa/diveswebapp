@@ -4,15 +4,9 @@
         $email= $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
-        echo $email;
-       
-       if (trim($password) == trim($reenter))
-       {
-           echo $email;
-           echo $password;
-           echo $reenter;
-       }
-       
+        
+        //insert data
+        $sql = "insert into signup_organizer(email, passord, reenterpassword" values ( '{$mysqli ->real_escape_string($_POST['email'])}','{$mysqli ->real_escape_string($_POST['password'])}','{$mysqli ->real_escape_string($_POST['reenterpassword'])}')
         
     ?>
 
