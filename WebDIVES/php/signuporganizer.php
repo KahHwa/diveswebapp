@@ -5,7 +5,7 @@
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
        
-       if ($password == $reenter)
+       if (trim($password) == trim($reenter))
        {
            echo $email;
            echo $password;
