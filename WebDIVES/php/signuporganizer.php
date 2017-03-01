@@ -4,9 +4,19 @@
         $email= $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
-        echo "$password<br>";
-        echo "$reenter<br>";
-        echo "$email";
+       
+       if ($password == $reenter)
+       {
+           echo $email;
+           echo $password;
+           echo $reenter;
+       }
+       else
+       {
+           echo "<a href="../html/signuporganizer.html">Click Here to Continue</a>";
+       }
+
+        
     ?>
 
     <a href="../html/dashboard.html">Click Here to Continue</a>
