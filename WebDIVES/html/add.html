@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Add Job Listing</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../script/bootstrap-tagsinput.js"></script>
+        <link rel="stylesheet"  href="../style/add.css">
+    </head>
+    <body>
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">  
+                        <a class="navbar-brand" href="#">DIVES</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="profile.html">Microsoft</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </form>
+                    </div>
+                </div>
+            </nav>   
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#">Recommendation</a></li>
+                    <li><a href="#">Message</a></li>   
+                </ul>
+                <ul class="sidebar-nav">
+                    <li><a href="upcoming.html">Upcoming Events</a></li>
+                    <li><a href="event.html">List of Events</a></li>
+                </ul>
+            </div>
+            
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="header">
+                        <div class="header-details1">
+                            <center>
+                            <svg height="200" width="200">
+                                <circle cx="100" cy="100" r="100" stroke-width="0" fill="grey" />
+                            </svg>
+                            </center>
+                        </div>
+                        <div class="header-details2">
+                            <center><h3>Microsoft Corporation</h3></center>
+                        </div>
+                        <hr>
+                    </div>
+                    <form>
+                        <div class="form-group row">
+                            <label for="addJobTitle" class="col-sm-2 col-form-label">Job Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="addJobTitle" aria-describedby="addJobTitle" placeholder="Enter job title">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="addKeywords" class="col-sm-2 col-form-label">Keyword(s)</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="tags" aria-describedby="addKeywords" placeholder="Enter multiple keywords" value="" data-role="tagsinput">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputVacancy" class="col-sm-2 col-form-label">Vacancy</label>
+                            <div class="col-sm-10">
+                            <input class="form-control" type="number" value="" id="inputVacancy" placeholder="Enter the number of vacancy">
+                            </div>
+                        </div>
+                        <a type="submit" class="btn btn-primary" href="profile.html">Save</a>
+                    </form>
+                    
+                </div>
+                
+            </div>
+
+        <!-- Menu Toggle script -->
+        <script>
+            $("#menu-toggle").click( function (e){
+                e.preventDefault();
+                $("#wrapper").toggleClass("menuDisplayed");
+            })
+        </script>    
+    </body>
+</html>
