@@ -3,7 +3,7 @@
     <?php
         $email= $_POST["email"];
         $password = $_POST["password"];
-        $reenter = $_POST["reenter_password"];
+        $reenter = $_POST["reenterpassword"];
         echo "$password<br>";
         echo "$reenter<br>";
         echo "$email";
