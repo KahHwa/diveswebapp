@@ -11,11 +11,7 @@
            echo $password;
            echo $reenter;
        }
-       else
-       {
-           echo "<a href="../html/signuporganizer.html">Click Here to Continue</a>";
-       }
-
+       
         
     ?>
 
