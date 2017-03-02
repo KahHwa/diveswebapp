@@ -7,6 +7,7 @@
         $email = $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
+        echo $email;
     
     $sql = "INSERT INTO signuporganizer(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
 
