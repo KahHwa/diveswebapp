@@ -2,14 +2,16 @@
 <body>
     <?php
 
-        // require='connection.php';
+        require='connection.php';
         
         $email= $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
+        echo $email;
+        echo $password;
+        echo $reenter;
         
-        //insert data
-       // g$sql = "insert into signup_organizer(email, passord, reenterpassword" values ( '{$mysqli ->real_escape_string($_POST['email'])}','{$mysqli ->real_escape_string($_POST['password'])}','{$mysqli ->real_escape_string($_POST['reenterpassword'])}');
+       
         
     ?>
 
