@@ -7,10 +7,14 @@
         $email = $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
-        echo $email;
+        // echo $email;
     
-    $sql = "INSERT INTO signuporganizer(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
-
+        $sql = "INSERT INTO signuporganizer(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
+        if ($conn->query($sql) === TRUE) {
+         echo "New record created successfully";}
+         else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     
         
        
