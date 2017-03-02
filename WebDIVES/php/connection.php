@@ -10,7 +10,7 @@ $password1 = "";
 $database1 = "diveswebapp";
 
 // Create connection
-$conn = new mysqli($servername1, $username1, $password1, $database1);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
