@@ -8,7 +8,7 @@
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
 
-        $sql = "INSERT INTO signuporganizer(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
+        $sql = "INSERT INTO signupcompany(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
         if ($conn->query($sql) === TRUE) {
          echo "New record created successfully";}
          else {
