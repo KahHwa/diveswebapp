@@ -7,9 +7,7 @@
         $email= $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
-        echo $email;
-        echo $password;
-        echo $reenter;
+    
         
        
         
