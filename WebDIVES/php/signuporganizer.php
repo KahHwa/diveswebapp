@@ -4,9 +4,12 @@
 
         require 'connection.php';
         
-        $email= $_POST["email"];
+        $email = $_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
+    
+    $sql = "INSERT INTO signuporganizer(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
+
     
         
        
