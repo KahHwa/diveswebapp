@@ -2,7 +2,7 @@
 <body>
     <?php
 
-        require='connection.php';
+        require 'connection.php';
         
         $email= $_POST["email"];
         $password = $_POST["password"];
