@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("mysql10.000webhost.com", "a3288368_user", "abcd1234", "a3288368_data");
+    $con = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");
     
     $email = $_POST["email"];
     $password = $_POST["password"];
