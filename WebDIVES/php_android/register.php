@@ -7,7 +7,7 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 
 $statement = mysqli_prepare($con, "INSERT INTO user (firstname, lastname, email, password) VALUES (?, ?, ?, ?)");
-mysqli_stmt_bind_param($statement, "siss", $firstname, $lastname, $email, $password);
+mysqli_stmt_bind_param($statement, "ssss", $firstname, $lastname, $email, $password);
 mysqli_stmt_execute($statement);
 
 $response = array();
