@@ -10,7 +10,7 @@ $password1 = "";
 $database1 = "diveswebapp";
 */
 
-// Create connection
+// Create connectionssss
 $conn = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");
 
 // Check connection
