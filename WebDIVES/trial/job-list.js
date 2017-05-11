@@ -6,13 +6,17 @@ angular.module('jobList', [])
                 name:'software engineer',
                 desc:'none',
                 vacancy:'1',
-                requirement:'html'
+                requirement1:'html',
+                requirement2:'html',
+                requirement3:'html'
             },
             {
                 name:'software engineer',
                 desc:'none',
                 vacancy:'2',
-                requirement:'css'
+                requirement1:'css',
+                requirement2:'css',
+                requirement3:'css'
             }
         ];
 
@@ -22,12 +26,16 @@ angular.module('jobList', [])
                     name:jobList.jobname,
                     desc:jobList.jobdesc,
                     vacancy:jobList.jobvacancy,
-                    requirement:jobList.jobrequirement
+                    requirement1:jobList.jobrequirement1,
+                    requirement2:jobList.jobrequirement2,
+                    requirement3:jobList.jobrequirement3
                 }
             );
             jobList.jobname = '';
             jobList.jobdesc = '';
             jobList.jobvacancy = '';
-            jobList.jobrequirement = '';
+            jobList.jobrequirement1 = '';
+            jobList.jobrequirement2 = '';
+            jobList.jobrequirement3 = '';
         };
     });

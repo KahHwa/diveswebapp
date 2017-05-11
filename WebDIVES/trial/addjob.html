@@ -9,13 +9,15 @@
         <h2>Job List</h2>
         <div ng-controller="JobListController as jobList">
             <!--<input type="text" ng-model="jobList.search" class="search-query" id="jobs_search" placeholder="Search">-->
-            <table>
+            <table cellpadding="5">
                 <thead>
                     <tr>
                         <th>Job Name</th>
                         <th>Job Description</th>
-                        <th>Requirements</th>
-                        <th>Vacancies</th>
+                        <th>vacancies</th>
+                        <th>Requirement 1</th>
+                        <th>Requirement 2</th>
+                        <th>Requirement 3</th>
                         <!--<th><a href="#/new"><i class="icon-plus-sign"></i></a></th>-->
                     </tr>
                 </thead>
@@ -24,7 +26,9 @@
                         <td>{{job.name}}</td>
                         <td>{{job.desc}}</td>
                         <td>{{job.vacancy}}</td>
-                        <td>{{job.requirement}}</td>
+                        <td>{{job.requirement1}}</td>
+                        <td>{{job.requirement2}}</td>
+                        <td>{{job.requirement3}}</td>
                         <!--<td>
                             <a ng-href="#/edit/{{job.$id}}"><i class="icon-pencil"></i></a>
                         </td>-->
@@ -35,7 +39,9 @@
                 <input type="text" ng-model="jobList.jobname"  size="30" placeholder="add new job here">
                 <input type="text" ng-model="jobList.jobdesc"  size="30" placeholder="add new description here">
                 <input type="text" ng-model="jobList.jobvacancy"  size="30" placeholder="add new vacancy here">
-                <input type="text" ng-model="jobList.jobrequirement"  size="30" placeholder="add new requirement here">
+                <input type="text" ng-model="jobList.jobrequirement1"  size="15" placeholder="add new requirement here">
+                <input type="text" ng-model="jobList.jobrequirement2"  size="15" placeholder="add new requirement here">
+                <input type="text" ng-model="jobList.jobrequirement3"  size="15" placeholder="add new requirement here">
                 <input class="btn-primary" type="submit" value="add">
             </form>
         </div>
