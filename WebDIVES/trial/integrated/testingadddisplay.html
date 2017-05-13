@@ -22,7 +22,8 @@
                      <br />
                      <label>Skill</label>  
                      <input type="text" name="skill3" ng-model="skill3" class="form-control" />  
-                     <br />  
+                     <br /> 
+                     <input type="hidden" ng-model="id" /> 
                      <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}"/>  
                      <br /><br />  
                      <table class="table table-bordered">  
@@ -86,7 +87,8 @@
                 $scope.names = data;  
            });  
       } 
-      $scope.updateData = function(Name, Skill1, Skill2, Skill3){
+      $scope.updateData = function(id, Name, Skill1, Skill2, Skill3){
+          $scope.id = id;
           $scope.username = Name;
           $scope.skill1 = Skill1;
           $scope.skill2 = Skill2;
