@@ -23,7 +23,7 @@
                      <label>Skill</label>  
                      <input type="text" name="skill3" ng-model="skill3" class="form-control" />  
                      <br />  
-                     <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{x.btnName}}"/>  
+                     <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}"/>  
                      <br /><br />  
                      <table class="table table-bordered">  
                           <tr>  
@@ -48,7 +48,7 @@
  <script>  
  var app = angular.module("myapp",[]);  
  app.controller("usercontroller", function($scope, $http){
-     $scope.btnName = "ADD";  
+    $scope.btnName = "ADD";  
       $scope.insertData = function(){
           if($scope.username == null)  
            {  
