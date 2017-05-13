@@ -9,14 +9,31 @@
       $skill1 = mysqli_real_escape_string($connect, $data->skill1);
       $skill2 = mysqli_real_escape_string($connect, $data->skill2);
       $skill3 = mysqli_real_escape_string($connect, $data->skill3);
-      $query = "INSERT INTO test_data(Name, Skill1, Skill2, Skill3) VALUES ('$username', '$skill1', '$skill2', '$skill3')";  
-      if(mysqli_query($connect, $query))  
-      {  
+      $btn_name = $data->btnName;
+      if ($btn_name == "ADD")
+      {
+        $query = "INSERT INTO test_data(Name, Skill1, Skill2, Skill3) VALUES ('$username', '$skill1', '$skill2', '$skill3')";  
+        if(mysqli_query($connect, $query))  
+        {  
            echo "Data Inserted...";  
-      }  
-      else  
-      {  
+        }  
+        else  
+        {  
            echo 'Error';  
-      }  
+        } 
+      }
+      if ($btn_name == "Update")
+      {
+        $query = "UPDATE test_data SET Name = '$username', SKill1 = '$skill1', Skill2 = '$skill2', Skill3 = '$skill3'";  
+        if(mysqli_query($connect, $query))  
+        {  
+            echo 'Data Updated...';  
+        }  
+        else  
+        {  
+            echo 'Error';  
+        }
+      }
+       
  }  
  ?> 

@@ -23,7 +23,7 @@
                      <label>Skill</label>  
                      <input type="text" name="skill3" ng-model="skill3" class="form-control" />  
                      <br />  
-                     <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="ADD"/>  
+                     <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{x.btnName}}"/>  
                      <br /><br />  
                      <table class="table table-bordered">  
                           <tr>  
@@ -47,11 +47,29 @@
  </html>  
  <script>  
  var app = angular.module("myapp",[]);  
- app.controller("usercontroller", function($scope, $http){  
-      $scope.insertData = function(){  
+ app.controller("usercontroller", function($scope, $http){
+     $scope.btnName = "ADD";  
+      $scope.insertData = function(){
+          if($scope.username == null)  
+           {  
+                alert("Name is required");  
+           }  
+           else if($scope.skill1 == null)  
+           {  
+                alert("SKill is required");  
+           }
+           else if($scope.skill2 == null)  
+           {  
+                alert("SKill is required");  
+           }
+           else if($scope.skill3 == null)  
+           {  
+                alert("SKill is required");  
+           }    
+           else{
            $http.post(  
                 "insert.php",  
-                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3}  
+                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName}  
            ).success(function(data){  
                 alert(data);  
                 $scope.username = null;  
@@ -59,13 +77,21 @@
                 $scope.skill2 = null;
                 $scope.skill3 = null;  
                 $scope.displayData();  
-           });  
+           }); 
+           } 
       }  
       $scope.displayData = function(){  
            $http.get("select.php")  
            .success(function(data){  
                 $scope.names = data;  
            });  
-      }  
+      } 
+      $scope.updateData = function(Name, Skill1, Skill2, Skill3){
+          $scope.username = Name;
+          $scope.skill1 = Skill1;
+          $scope.skill2 = Skill2;
+          $scope.skill3 = Skill3;
+          $scope.btnName = "Update";
+      }
  });  
  </script>
