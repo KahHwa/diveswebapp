@@ -6,8 +6,10 @@
  if(count($data) > 0)  
  {  
       $username = mysqli_real_escape_string($connect, $data->username);       
-      $skill = mysqli_real_escape_string($connect, $data->skill);
-      $query = "INSERT INTO test_data(Name, Skill1) VALUES ('$username', '$skill')";  
+      $skill1 = mysqli_real_escape_string($connect, $data->skill1);
+      $skill2 = mysqli_real_escape_string($connect, $data->skill2);
+      $skill3 = mysqli_real_escape_string($connect, $data->skill3);
+      $query = "INSERT INTO test_data(Name, Skill1, Skill2, Skill3) VALUES ('$username', '$skill1', '$skill2', '$skill3')";  
       if(mysqli_query($connect, $query))  
       {  
            echo "Data Inserted...";  

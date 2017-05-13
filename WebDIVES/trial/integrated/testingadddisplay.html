@@ -15,7 +15,13 @@
                      <input type="text" name="username" ng-model="username" class="form-control" />  
                      <br />  
                      <label>Skill</label>  
-                     <input type="text" name="skill" ng-model="skill" class="form-control" />  
+                     <input type="text" name="skill1" ng-model="skill1" class="form-control" />  
+                     <br />
+                     <label>Skill</label>  
+                     <input type="text" name="skill2" ng-model="skill2" class="form-control" />  
+                     <br />
+                     <label>Skill</label>  
+                     <input type="text" name="skill2" ng-model="skill2" class="form-control" />  
                      <br />  
                      <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="ADD"/>  
                      <br /><br />  
@@ -43,7 +49,7 @@
       $scope.insertData = function(){  
            $http.post(  
                 "insert.php",  
-                {'username':$scope.username, 'skill':$scope.skill}  
+                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3}  
            ).success(function(data){  
                 alert(data);  
                 $scope.username = null;  
