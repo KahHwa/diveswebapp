@@ -70,7 +70,7 @@
            else{
            $http.post(  
                 "insert.php",  
-                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName}  
+                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName, 'id':$scope.id}  
            ).success(function(data){  
                 alert(data);  
                 $scope.username = null;  
