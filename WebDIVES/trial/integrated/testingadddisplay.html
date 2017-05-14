@@ -23,7 +23,7 @@
                      <label>Skill</label>  
                      <input type="text" name="skill3" ng-model="skill3" class="form-control" />  
                      <br /> 
-                     <input type="hidden" ng-model="id" /> 
+                     <input type="hidden" ng-model="Id" /> 
                      <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}"/>  
                      <br /><br />  
                      <table class="table table-bordered">  
@@ -70,7 +70,7 @@
            else{
            $http.post(  
                 "insert.php",  
-                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName, 'id':$scope.id}  
+                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName, 'id':$scope.Id}  
            ).success(function(data){  
                 alert(data);  
                 $scope.username = null;  
@@ -94,7 +94,7 @@
           $scope.skill2 = Skill2;
           $scope.skill3 = Skill3;
           $scope.btnName = "Update";
-          $scope.id = Id;
+          $scope.Id = Id;
       }
  });  
  </script>
