@@ -24,8 +24,8 @@
       }
       if ($btn_name == "Update")
       {
-        $Id = $data->Id;
-        $query = "UPDATE test_data SET Name = '$username', SKill1 = '$skill1', Skill2 = '$skill2', Skill3 = '$skill3' WHERE Id ='$Id' ";  
+        $id = $data->id;
+        $query = "UPDATE test_data SET Name = '$username', SKill1 = '$skill1', Skill2 = '$skill2', Skill3 = '$skill3' WHERE Id ='$id' ";  
         if(mysqli_query($connect, $query))  
         {  
             echo 'Data Updated...';  
