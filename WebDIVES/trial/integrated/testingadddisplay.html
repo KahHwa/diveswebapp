@@ -2,13 +2,13 @@
  <!-- index.php !-->  
  <html>  
       <head>  
-           <title>Webslesson Tutorial | AngularJS Tutorial with PHP - Fetch / Select Data from Mysql Database</title>  
+           <title>Test Data Display</title>  
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
            <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
       </head>  
       <body>  
            <br /><br />  
-           <div class="container" style="width:500px;">  
+           <div class="container" style="width:550px;">  
                 <h3 align="center">AngularJS Tutorial with PHP - Fetch / Select Data from Mysql Database</h3>  
                 <div ng-app="myapp" ng-controller="usercontroller" ng-init="displayData()">  
                      <label>Username</label>  
@@ -33,6 +33,7 @@
                                <th>Skill</th>
                                <th>Skill</th>
                                <th>Update</th>
+                               <th>Delete</th>
                           </tr>  
                           <tr ng-repeat="x in names">  
                                <td>{{x.Name}}</td>  
@@ -40,6 +41,7 @@
                                <td>{{x.Skill2}}</td>
                                <td>{{x.Skill3}}</td>  
                                <td><button ng-click="updateData(x.Id, x.Name, x.Skill1, x.Skill2, x.Skill3)" class="btn btn-info btn-xs">Update</button></td>
+                               <td><button ng-click="deleteData(x.Id )"class="btn btn-danger btn-xs">Delete</button></td>
                           </tr>  
                      </table>  
                 </div>  
@@ -95,6 +97,18 @@
           $scope.skill2 = Skill2;
           $scope.skill3 = Skill3;
           $scope.btnName = "Update";
+      }
+      $scope.deleteData = function(Id){
+          if(confirm("Are you sure want to delete this data?")){
+                $http.post("delete.php", {'Id':Id})  
+                .success(function(data){  
+                     alert(data);  
+                     $scope.displayData();  
+                });
+          }
+          else{
+              return false;
+          }
       }
  });  
  </script>
