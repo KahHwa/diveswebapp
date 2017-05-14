@@ -4,8 +4,8 @@
  $data = json_decode(file_get_contents("php://input"));  
  if(count($data) > 0)  
  {  
-      $Id = $data->Id;  
-      $query = "DELETE FROM test_data WHERE Id='$Id'";  
+      $userid = $data->userid;  
+      $query = "DELETE FROM test_data WHERE Id='$userid'";  
       if(mysqli_query($connect, $query))  
       {  
            echo 'Data Deleted';  

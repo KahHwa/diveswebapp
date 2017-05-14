@@ -100,7 +100,7 @@
       }
       $scope.deleteData = function(Id){
           if(confirm("Are you sure want to delete this data?")){
-                $http.post("delete.php", {'Id':Id})  
+                $http.post("delete.php", {'userid':Id})  
                 .success(function(data){  
                      alert(data);  
                      $scope.displayData();  
