@@ -23,7 +23,7 @@
                      <label>Skill</label>  
                      <input type="text" name="skill3" ng-model="skill3" class="form-control" />  
                      <br /> 
-                     <input type="hidden" ng-model="Id" /> 
+                     <input type="hidden" ng-model="userid" /> 
                      <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}"/>  
                      <br /><br />  
                      <table class="table table-bordered">  
@@ -41,7 +41,7 @@
                                <td>{{x.Skill2}}</td>
                                <td>{{x.Skill3}}</td>  
                                <td><button ng-click="updateData(x.Id, x.Name, x.Skill1, x.Skill2, x.Skill3)" class="btn btn-info btn-xs">Update</button></td>
-                               <td><button ng-click="deleteData(x.Id )"class="btn btn-danger btn-xs">Delete</button></td>
+                               <td><button ng-click="deleteData(x.Id)"class="btn btn-danger btn-xs">Delete</button></td>
                           </tr>  
                      </table>  
                 </div>  
@@ -70,18 +70,18 @@
                 alert("SKill is required");  
            }    
            else{
-           $http.post(  
-                "insert.php",  
-                {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName, 'Id':$scope.Id}  
-           ).success(function(data){  
-                alert(data);  
-                $scope.username = null;  
-                $scope.skill1 = null;
-                $scope.skill2 = null;
-                $scope.skill3 = null; 
-                $scope.btnName = "ADD"; 
-                $scope.displayData();  
-           }); 
+            $http.post(  
+                    "insert.php",  
+                    {'username':$scope.username, 'skill1':$scope.skill1, 'skill2':$scope.skill2, 'skill3':$scope.skill3, 'btnName':$scope.btnName, 'userid':$scope.userid}  
+            ).success(function(data){  
+                    alert(data);  
+                    $scope.username = null;  
+                    $scope.skill1 = null;
+                    $scope.skill2 = null;
+                    $scope.skill3 = null; 
+                    $scope.btnName = "ADD"; 
+                    $scope.displayData();  
+            }); 
            } 
       }  
       $scope.displayData = function(){  
@@ -91,7 +91,7 @@
            });  
       } 
       $scope.updateData = function(Id, Name, Skill1, Skill2, Skill3){
-          $scope.Id = Id;
+          $scope.userid = Id;
           $scope.username = Name;
           $scope.skill1 = Skill1;
           $scope.skill2 = Skill2;
