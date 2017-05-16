@@ -108,32 +108,30 @@
                 <p class="text-right"><a href="add.html">Add</a></p>-->
                 <div class="container-fluid" style="width:1300px;">
                     <div ng-app="myapp" ng-controller="jobcontroller" ng-init="displayData()">
-                        <div class="col-xs-4">
-                            <label>Position</label>
-                            <input type="text" name="position" ng-model="position" class="form-control" value="" />
-                            <br>
-                            <label>1st Requirement</label>
-                            <input type="text" name="requirement1" ng-model="requirement1" class="form-control" value="" />
-                            <br>
-                            <label>2nd Requirement</label>
-                            <input type="text" name="requirement2" ng-model="requirement2" class="form-control" value="" />
-                            <br>
-                            <label>3rd Requirement</label>
-                            <input type="text" name="requirement3" ng-model="requirement3" class="form-control" value="" />
-                            <br>
-                            <label>Vacancy</label>
-                            <input type="text" name="vacancy" ng-model="vacancy" class="form-control" value="" />
-                            <br>
-                            <label>Applicants</label>
-                            <input type="text" name="applicants" ng-model="applicants" class="form-control" value="" />
-                            <br>
-                            <label>Status</label>
-                            <input type="text" name="job_status" ng-model="job_status" class="form-control" value="" />
-                            <br>
-                            <input type="hidden" ng-model="jobid" />
-                            <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}" />
-                            <br><br>
-                        </div>
+                        <label>Position</label>
+                        <input type="text" name="position" ng-model="position" class="form-control" value="" />
+                        <br>
+                        <label>1st Requirement</label>
+                        <input type="text" name="requirement1" ng-model="requirement1" class="form-control" value="" />
+                        <br>
+                        <label>2nd Requirement</label>
+                        <input type="text" name="requirement2" ng-model="requirement2" class="form-control" value="" />
+                        <br>
+                        <label>3rd Requirement</label>
+                        <input type="text" name="requirement3" ng-model="requirement3" class="form-control" value="" />
+                        <br>
+                        <label>Vacancy</label>
+                        <input type="text" name="vacancy" ng-model="vacancy" class="form-control" value="" />
+                        <br>
+                        <label>Applicants</label>
+                        <input type="text" name="applicants" ng-model="applicants" class="form-control" value="" />
+                        <br>
+                        <label>Status</label>
+                        <input type="text" name="job_status" ng-model="job_status" class="form-control" value="" />
+                        <br>
+                        <input type="hidden" ng-model="jobid" />
+                        <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}" />
+                        <br><br>
                         <table class="table-responsive">
                             <tr>
                                 <th>Id</th>
