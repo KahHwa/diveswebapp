@@ -31,7 +31,7 @@ app.controller("jobcontroller", function($scope, $http){
             alert("This field is required");
         }
         else{
-            $http.post("../php/insert_job.php",
+            $http.post("insert_job.php",
             {'position':$scope.position, 'requirement1':$scope.requirement1, 'requirement2':$scope.requirement2, 'requirement3':$scope.requirement3, 'vacancy':$scope.vacancy, 'applicants':$scope.applicants, 'job_status':$scope.job_status}
             ).success(function(data){
                 alert(data);
@@ -48,14 +48,14 @@ app.controller("jobcontroller", function($scope, $http){
         }
     }
     $scope.displayData = function(){
-        $http.get("../php/select_job.php")
+        $http.get("select_job.php")
         .success(function(data){
             $scope.positions = data;
         });
     }
-    $scope.updateData = function(Id, Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status){
+    $scope.updateData = function(Id, Positions, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status){
         $scope.jobid = Id;
-        $scope.position = Position;
+        $scope.position = Positions;
         $scope.requirement1 = Requirement1;
         $scope.requirement2 = Requirement2;
         $scope.requirement3 = Requirement3;
@@ -66,7 +66,7 @@ app.controller("jobcontroller", function($scope, $http){
     }
     $scope.deleteData = function(Id){
         if(confirm("Are you sure want to delete this data?")){
-            $http.post("../php/delete_job.php", {'jobid':Id})
+            $http.post("delete_job.php", {'jobid':Id})
             .success(function(data){
                 alert(data);
                 $scope.displayData();
