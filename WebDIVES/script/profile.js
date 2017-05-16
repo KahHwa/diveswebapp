@@ -22,23 +22,23 @@ app.controller("jobcontroller", function($scope, $http){
         {
             alert("Vacancy is required");
         }
-        else if($scope.applicant == null)
+        else if($scope.applicants == null)
         {
             alert("Applicant is required");
         }
-        else if($scope.fp == null)
+        else if($scope.job_status == null)
         {
             alert("This field is required");
         }
         else{
-            $http.post("insertjob.php",
+            $http.post("insert_job.php",
             {'position':$scope.position, 
             'requirement1':$scope.requirement1, 
             'requirement2':$scope.requirement2, 
             'requirement3':$scope.requirement3, 
             'vacancy':$scope.vacancy, 
-            'applicant':$scope.applicant, 
-            'fp':$scope.fp}
+            'applicants':$scope.applicants, 
+            'job_status':$scope.job_status}
             ).success(function(data){
                 alert(data);
                 $scope.position = null;
@@ -47,19 +47,19 @@ app.controller("jobcontroller", function($scope, $http){
                 $scope.requirement3 = null;
                 $scope.vacancy = null;
                 $scope.applicant = null;
-                $scope.fp = null;
+                $scope.job_status = null;
                 $scope.btnName = "ADD";
                 $scope.displayData();
             });
         }
     }
     $scope.displayData = function(){
-        $http.get("selectjob.php")
+        $http.get("select_job.php")
         .success(function(data){
             $scope.positions = data;
         });
     }
-    $scope.updateData = function(Id, Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicant, FP){
+    $scope.updateData = function(Id, Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicant, Job_status){
         $scope.jobid = Id;
         $scope.position = Position;
         $scope.requirement1 = Requirement1;
@@ -67,7 +67,7 @@ app.controller("jobcontroller", function($scope, $http){
         $scope.requirement3 = Requirement3;
         $scope.vacancy = Vacancy;
         $scope.applicant = Applicant;
-        $scope.fp = FP;
+        $scope.job_status = Job_status;
         $scope.btnName = "Update";
     }
     $scope.deleteData = function(Id){

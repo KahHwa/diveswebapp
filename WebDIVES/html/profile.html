@@ -124,11 +124,11 @@
                             <label>Vacancy</label>
                             <input type="text" name="vacancy" ng-model="vacancy" class="form-control" value="" />
                             <br>
-                            <label>Applicant</label>
-                            <input type="text" name="applicant" ng-model="applicant" class="form-control" value="" />
+                            <label>Applicants</label>
+                            <input type="text" name="applicants" ng-model="applicants" class="form-control" value="" />
                             <br>
-                            <label>Fulltime/Parttime</label>
-                            <input type="text" name="fp" ng-model="fp" class="form-control" value="" size="50" />
+                            <label>Status</label>
+                            <input type="text" name="job_status" ng-model="job_status" class="form-control" value="" size="50" />
                             <br>
                             <input type="hidden" ng-model="jobid" />
                             <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}" />
@@ -154,9 +154,9 @@
                                 <td>{{x.Requirement2}}</td>
                                 <td>{{x.Requirement3}}</td>
                                 <td>{{x.Vacancy}}</td>
-                                <td>{{x.Applicant}}</td>
-                                <td>{{x.FP}}</td>
-                                <td><button ng-click="updateData(x.Id, x.Requirement1, x.Requirement2, x.Requirement3, x.Vacancy, x.Applicant, x.FP)" class="btn btn-info btn-xs">Update</button></td>
+                                <td>{{x.Applicants}}</td>
+                                <td>{{x.Job_status}}</td>
+                                <td><button ng-click="updateData(x.Id, x.Requirement1, x.Requirement2, x.Requirement3, x.Vacancy, x.Applicant, x.Job_status)" class="btn btn-info btn-xs">Update</button></td>
                                 <td><button ng-click="deleteData(x.Id)" class="btn btn-danger btn-xs">Delete</button></td>
                             </tr>
                         </table>
