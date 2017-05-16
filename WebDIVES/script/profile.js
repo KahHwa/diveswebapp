@@ -24,7 +24,7 @@ app.controller("jobcontroller", function($scope, $http){
         }
         else if($scope.applicants == null)
         {
-            alert("Applicant is required");
+            alert("Applicants is required");
         }
         else if($scope.job_status == null)
         {
@@ -46,7 +46,7 @@ app.controller("jobcontroller", function($scope, $http){
                 $scope.requirement2 = null;
                 $scope.requirement3 = null;
                 $scope.vacancy = null;
-                $scope.applicant = null;
+                $scope.applicants = null;
                 $scope.job_status = null;
                 $scope.btnName = "ADD";
                 $scope.displayData();
@@ -59,14 +59,14 @@ app.controller("jobcontroller", function($scope, $http){
             $scope.positions = data;
         });
     }
-    $scope.updateData = function(Id, Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicant, Job_status){
+    $scope.updateData = function(Id, Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status){
         $scope.jobid = Id;
         $scope.position = Position;
         $scope.requirement1 = Requirement1;
         $scope.requirement2 = Requirement2;
         $scope.requirement3 = Requirement3;
         $scope.vacancy = Vacancy;
-        $scope.applicant = Applicant;
+        $scope.applicants = Applicants;
         $scope.job_status = Job_status;
         $scope.btnName = "Update";
     }
