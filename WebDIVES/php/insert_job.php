@@ -15,7 +15,7 @@
       $btn_name = $data->btnName;
       if ($btn_name == "ADD")
       {
-        $query = "INSERT INTO microsoft_job (Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status ) VALUES ('$position', '$requirement1', '$requirement2', '$requirement3', '$vacancy', '$applicants', '$job_status')";  
+        $query = "INSERT INTO microsoft_job(Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status ) VALUES ('$position', '$requirement1', '$requirement2', '$requirement3', '$vacancy', '$applicants', '$job_status')";  
         if(mysqli_query($connect, $query))  
         {  
            echo "Data Inserted...";  
