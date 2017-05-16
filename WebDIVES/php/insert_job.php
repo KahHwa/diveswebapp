@@ -11,7 +11,7 @@
       $requirement3 = mysqli_real_escape_string($connect, $data->requirement3);
       $vacancy = mysqli_real_escape_string($connect, $data->vacancy);
       $applicants = mysqli_real_escape_string($connect, $data->applicants);
-      $job_status = mysqli_real_escape_string($connect, $data->job_status;
+      $job_status = mysqli_real_escape_string($connect, $data->job_status);
       $btn_name = $data->btnName;
       if ($btn_name == "ADD")
       {
