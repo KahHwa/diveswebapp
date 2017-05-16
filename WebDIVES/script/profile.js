@@ -53,9 +53,9 @@ app.controller("jobcontroller", function($scope, $http){
             $scope.positions = data;
         });
     }
-    $scope.updateData = function(Id, Positions, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status){
+    $scope.updateData = function(Id, Position, Requirement1, Requirement2, Requirement3, Vacancy, Applicants, Job_status){
         $scope.jobid = Id;
-        $scope.position = Positions;
+        $scope.position = Position;
         $scope.requirement1 = Requirement1;
         $scope.requirement2 = Requirement2;
         $scope.requirement3 = Requirement3;
