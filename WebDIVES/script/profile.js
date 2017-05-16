@@ -32,7 +32,7 @@ app.controller("jobcontroller", function($scope, $http){
         }
         else{
             $http.post("insert_job.php",
-            {'position':$scope.position, 'requirement1':$scope.requirement1, 'requirement2':$scope.requirement2, 'requirement3':$scope.requirement3, 'vacancy':$scope.vacancy, 'applicants':$scope.applicants, 'job_status':$scope.job_status}
+            {'position':$scope.position, 'requirement1':$scope.requirement1, 'requirement2':$scope.requirement2, 'requirement3':$scope.requirement3, 'vacancy':$scope.vacancy, 'applicants':$scope.applicants, 'job_status':$scope.job_status, 'btnName':$scope.btnName, 'jobid':$scope.jobid}
             ).success(function(data){
                 alert(data);
                 $scope.position = null;
