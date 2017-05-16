@@ -31,7 +31,7 @@ app.controller("jobcontroller", function($scope, $http){
             alert("This field is required");
         }
         else{
-            $http.post("insert_job.php",
+            $http.post("../php/insert_job.php",
             {'position':$scope.position, 'requirement1':$scope.requirement1, 'requirement2':$scope.requirement2, 'requirement3':$scope.requirement3, 'vacancy':$scope.vacancy, 'applicants':$scope.applicants, 'job_status':$scope.job_status, 'btnName':$scope.btnName, 'jobid':$scope.jobid}
             ).success(function(data){
                 alert(data);
@@ -48,7 +48,7 @@ app.controller("jobcontroller", function($scope, $http){
         }
     }
     $scope.displayData = function(){
-        $http.get("select_job.php")
+        $http.get("../php/select_job.php")
         .success(function(data){
             $scope.positions = data;
         });
@@ -66,7 +66,7 @@ app.controller("jobcontroller", function($scope, $http){
     }
     $scope.deleteData = function(Id){
         if(confirm("Are you sure want to delete this data?")){
-            $http.post("delete_job.php", {'jobid':Id})
+            $http.post("../php/delete_job.php", {'jobid':Id})
             .success(function(data){
                 alert(data);
                 $scope.displayData();
