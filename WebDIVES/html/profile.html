@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <link rel="stylesheet"  href="../style/profile.css">
     </head>
     <body>
@@ -43,7 +44,7 @@
             
             <!-- Page content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
+                <!--<div class="container-fluid">
                     <div class="header">
                         <div class="header-details1">
                             <center>
@@ -103,8 +104,59 @@
                     
                 </div>
                  
-                <p class="text-right"><a href="add.html">Add</a></p>
-
+                <p class="text-right"><a href="add.html">Add</a></p>-->
+                <div ng-app="myapp" ng-controller="jobcontroller" ng-init="displayData()">
+                    <label>Position</label>
+                    <input type="text" name="position" ng-model="position" class="form-control" value="" />
+                    <br>
+                    <label>1st Requirement</label>
+                    <input type="text" name="requirement1" ng-model="requirement1" class="form-control" value="" />
+                    <br>
+                    <label>2nd Requirement</label>
+                    <input type="text" name="requirement2" ng-model="requirement2" class="form-control" value="" />
+                    <br>
+                    <label>3rd Requirement</label>
+                    <input type="text" name="requirement3" ng-model="requirement3" class="form-control" value="" />
+                    <br>
+                    <label>Vacancy</label>
+                    <input type="text" name="vacancy" ng-model="vacancy" class="form-control" value="" />
+                    <br>
+                    <label>Applicant</label>
+                    <input type="text" name="applicant" ng-model="applicant" class="form-control" value="" />
+                    <br>
+                    <label>Fulltime/Parttime</label>
+                    <input type="text" name="fp" ng-model="fp" class="form-control" value="" />
+                    <br>
+                    <input type="hidden" ng-model="jobid" />
+                    <input type="submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}" />
+                    <br><br>
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>Id</th>
+                            <th>Position</th>
+                            <th>Requirement</th>
+                            <th>Requirement</th>
+                            <th>Requirement</th>
+                            <th>Vacancy</th>
+                            <th>Applicant</th>
+                            <th>Fulltime/Parttime</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tr ng-repeat="x in names">
+                            <td>{{x.Id}}</td>
+                            <td>{{x.Position}}</td>
+                            <td>{{x.Requirement1}}</td>
+                            <td>{{x.Requirement2}}</td>
+                            <td>{{x.Requirement3}}</td>
+                            <td>{{x.Vacancy}}</td>
+                            <td>{{x.Applicant}}</td>
+                            <td>{{x.FP}}</td>
+                            <td><button ng-click="updateData(x.Id, x.Requirement1, x.Requirement2, x.Requirement3, x.Vacancy, x.Applicant, x.FP)" class="btn btn-info btn-xs">Update</button></td>
+                            <td><button ng-click="deleteData(x.Id)" class="btn btn-danger btn-xs">Delete</button></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
         <!-- Menu Toggle script -->
