@@ -7,7 +7,7 @@
 
  $user_name = $_POST["login_name"];  
  $user_pass =  $_POST["login_pass"];  
- $sql_query = "select Company_name from company_signup where Company_name like '$user_name' and Password like '$user_pass';";  
+ $sql_query = "select Company_name from company_signup where Password like '$user_pass';";  
  $result = mysqli_query($con,$sql_query);  
  if(mysqli_num_rows($result) >0 )  
  {  
