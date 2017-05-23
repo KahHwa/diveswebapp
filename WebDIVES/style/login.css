@@ -14,7 +14,7 @@ body{
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 1px 1px 15px #888888;
-    padding-left: 0;
+    padding-left: 0px;
 }
 .header{
     width: 400px;
@@ -44,7 +44,7 @@ input[type="text"],input[type="password"]{
     border: none;
     background-color: #2ECC71;
     border-radius: 4px;
-    margin-left: 18px;
+    margin-left: 0px;
 }
 .btn-default{
     width: 300px;
@@ -65,5 +65,5 @@ p.sansserif{
 }
 .input-form{
     align-content: center;
-    margin-left: 50px;
+    margin-left: 18px;
 }
