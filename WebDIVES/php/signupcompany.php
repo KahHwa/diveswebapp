@@ -4,11 +4,11 @@
 
         require 'connection.php';
 
-        $email=$_POST["email"];
+        $companyName=$_POST["companyName"];
+        $email = $_POST["email"];
         $password = $_POST["password"];
-        $reenter = $_POST["reenterpassword"];
 
-        $sql = "INSERT INTO signupcompany(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
+        $sql = "INSERT INTO registercompany(username, email, pass) VALUES ('$companyName', '$email', '$password')";
         if ($conn->query($sql) === TRUE) {
          echo "New record created successfully";}
          else {
