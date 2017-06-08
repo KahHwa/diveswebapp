@@ -7,7 +7,7 @@
         $companyName=$_POST["companyName"];
         $email=$_POST["email"];
         $password = $_POST["password"];
-        $query =mysqli_query('SELECT * FROM registercompany where EMAIL='$email'');
+        $query =mysqli_query("SELECT * FROM registercompany where EMAIL='$email'");
         $result=mysqli_fetch_array($query);
         // $row = mysqli_num_rows($query);
         // $row = 0;
