@@ -7,11 +7,11 @@
         $companyName=$_POST["companyName"];
         $email=$_POST["email"];
         $password = $_POST["password"];
-        // $query =mysqli_query('SELECT * FROM registercompany where EMAIL='$email'');
-        // $result=mysqli_fetch_array($query);
+        $query =mysqli_query('SELECT * FROM registercompany where EMAIL='$email'');
+        $result=mysqli_fetch_array($query);
         // $row = mysqli_num_rows($query);
-        $row = 0;
-        if ($row == 0){
+        // $row = 0;
+        if ($result == FALSEa){
                 $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$email', '$email', '$password')";
 
                 if ($conn->query($sql) == TRUE) {
