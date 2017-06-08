@@ -7,10 +7,10 @@
         $email=$_POST["email"];
         $password = $_POST["password"];
         $reenter = $_POST["reenterpassword"];
-        $query =mysqli_query('SELECT * FROM registercompany where EMAIL='$email'');
-        $result=mysqli_fetch_array($query);
-        $row = mysqli_num_rows($query);
-        
+        // $query =mysqli_query('SELECT * FROM registercompany where EMAIL='$email'');
+        // $result=mysqli_fetch_array($query);
+        // $row = mysqli_num_rows($query);
+        $row = 0;
         if ($row == 0){
                 $sql = "INSERT INTO signupcompany(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
 
