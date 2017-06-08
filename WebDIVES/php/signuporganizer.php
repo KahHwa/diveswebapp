@@ -4,12 +4,12 @@
 
         require 'connection.php';
         
+        $organizerName = $_POST["organizerName"];
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $reenter = $_POST["reenterpassword"];
         // echo $email;
     
-        $sql = "INSERT INTO signuporganizer(email, password, reenterpassword) VALUES ('$email', '$password', '$reenter')";
+        $sql = "INSERT INTO registerorganizer(ORGANIZER_NAME, EMAIL, PASS) VALUES ('$organizerName', '$email', '$password')";
         if ($conn->query($sql) === TRUE) {
          echo "New record created successfully";}
          else {
