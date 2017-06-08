@@ -11,7 +11,7 @@
         $result=mysqli_fetch_array($query);
         // $row = mysqli_num_rows($query);
         // $row = 0;
-        if ($result == FALSEa){
+        if ($result == FALSE){
                 $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$email', '$email', '$password')";
 
                 if ($conn->query($sql) == TRUE) {
