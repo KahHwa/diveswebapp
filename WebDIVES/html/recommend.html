@@ -45,89 +45,22 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid">
                     <div class="container_table">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Rank</th>
-                                    <th>Name</th>
-                                    <th>See Full Profile Here</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Levi Bush</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#2</td>
-                                    <td>Marlene Perkins</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#3</td>
-                                    <td>Kristen Mccarthy</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#4</td>
-                                    <td>Suzanne Keller</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#5</td>
-                                    <td>Alberta Davis</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#6</td>
-                                    <td>Rene Rice</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#7</td>
-                                    <td>Penny Mckenzie</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#8</td>
-                                    <td>Kelly Moreno</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#9</td>
-                                    <td>Beeulah Pierce</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#10</td>
-                                    <td>Vera Roy</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" role="button">Here</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div ng-app="myapp" ng-controller="jobcontroller" ng-init="displayData()">
+                            <table class="table table-bordered">  
+                                <tr>  
+                                    <th>Id Job </th>
+                                    <th>Job Name</th>  
+                                    <th>Recommended Applicants</th>
+                        
+                                </tr>  
+                                <tr ng-repeat="x in names">
+                                        <td>{{x.Id}}</td>  
+                                        <td>{{x.Name}}</td>  
+                                        <td><button ng-click="deleteData(x.Id)"class="btn btn-danger btn-xs">Delete</button></td>
+                          </tr>  
+                     </table> 
+                        </div>
                     </div>
-                    asdasdasd
                 </div>
                 
             </div>
