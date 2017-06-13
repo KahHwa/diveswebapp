@@ -46,7 +46,7 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid">
                     <div class="container_table">
-                        <div ng-app="myapp" ng-controller="jobcontroller" ng-init="displayData()">
+                        <div ng-app="myapp" ng-controller="job_controller" ng-init="displayData()">
                             <table class="table table-bordered">  
                                 <tr>  
                                     <th>Id Job </th>
@@ -56,7 +56,7 @@
                                 <tr ng-repeat="x in positions">
                                         <td>{{x.Id}}</td>  
                                         <td>{{x.Position}}</td>  
-                                        <td><button ng-click="deleteData(x.Id)"class="btn btn-danger btn-xs">Delete</button></td>
+                                        <td><button>Delete</button></td>
                                 </tr>  
                             </table> 
                         </div>
