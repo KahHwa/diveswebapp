@@ -11,8 +11,8 @@
         $result=mysqli_fetch_array($query);
         $row = mysqli_num_rows($query);
         // $row = 0;
-        if ($row[0]>0){
-                $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$email', '$email', '$password')";
+        if ($row>0){
+                $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$companyName', '$email', '$password')";
 
                 if ($conn->query($sql) == TRUE) {
                     echo "New record created successfully";}
