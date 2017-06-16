@@ -17,5 +17,5 @@ $conn = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "
 if ($conn->connect_errno) {
     die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
+echo "Connected To database successfully\n";
 ?>

@@ -11,17 +11,17 @@
         $result=mysqli_fetch_array($query);
         $row = mysqli_num_rows($query);
         // $row = 0;
-        if ($row>0){
-                $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$companyName', '$email', '$password')";
+        if ($row!=0){
+                 echo "User Already Exist! " ;
+        }
+        else{
+              $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$companyName', '$email', '$password')";
 
                 if ($conn->query($sql) == TRUE) {
                     echo "New record created successfully";}
                 else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                 }
-        }
-        else{
-            echo "User Already Exist! " ;
         }
     ?>
     <a href="../html/dashboard.html">Click Here to Continue</a>
