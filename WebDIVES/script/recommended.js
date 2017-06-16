@@ -6,4 +6,4 @@ var app = angular.module("myapps",[]);
                 $scope.positions = data;  
            });  
       }
- });
+ })
