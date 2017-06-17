@@ -2,7 +2,7 @@
 <body>
     <?php 
 
-        //require 'connection.php';
+        //require 'connection.phps';
         $conn = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");
         $check ="SELECT * FROM registercompany where EMAIL='$email', COMPANY_NAME ='$companyName' ";
         $rs = mysqli_query($conn,$check);
