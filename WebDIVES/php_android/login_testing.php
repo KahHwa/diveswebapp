@@ -7,12 +7,12 @@
 
  $user_name = $_POST["login_name"];  
  $user_pass =  $_POST["login_pass"];  
- $sql_query = "select Company_name from company_signup where Password like '$user_pass';";  
+ $sql_query = "select USERNAME from user where PASSWORD like '$user_pass';";  
  $result = mysqli_query($con,$sql_query);  
  if(mysqli_num_rows($result) >0 )  
  {  
  $row = mysqli_fetch_assoc($result);  
- $name =$row["Company_name"];  
+ $name =$row["USERNAME"];  
  echo "Login Success..Welcome ".$name;  
  }  
  else  
