@@ -7,7 +7,12 @@
         $check ="SELECT * FROM registercompany where EMAIL='$email', COMPANY_NAME ='$companyName' ";
         $rs = mysqli_query($conn,$check);
         $data=mysqli_fetch_array($rs,MYSQLI_NUM);
-        if ($data[0]>1){
+        
+        $companyName=$_POST["companyName"];
+        $email=$_POST["email"];
+        $password = $_POST["password"];
+        
+        if (mysqli_num_rows($rs)>1){
             echo "Username or Email Already Taken<br/>";
 
         }
