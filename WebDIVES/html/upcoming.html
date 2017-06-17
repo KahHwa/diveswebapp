@@ -96,12 +96,22 @@
                             <th>Register</th>
                         </tr>
                         <tr ng-repeat="x in events">
+
                             <td>{{x.Id}}</td>
                             <td>{{x.Eventname}}</td>
                             <td>{{x.Organizer}}</td>
                             <td>{{x.Description}}</td>
                             <td>{{x.Date}}</td>
-                            <td><button ng-click="registerEvent" class="btn btn-info btn-s">Register</button></td>
+                            <td>
+                                <form method="POST" action="/webdives/html/event.html">
+                                    <input type="text" name="id" hidden value="{{ x.Id }}">
+                                    <input type="text" name="eventname" hidden value="{{ x.Eventname }}">
+                                    <input type="text" name="organizer" hidden value="{{ x.oescription }}">
+                                    <input type="text" name="description" hidden value="{{ x.Description }}">
+                                    <input type="text" name="date" hidden value="{{ x.Date }}">
+                                    <button class="btn btn-info btn-s">Register</button>
+                                </form>
+                            </td>
                         </tr>                    
                     </table>
                 </div>
