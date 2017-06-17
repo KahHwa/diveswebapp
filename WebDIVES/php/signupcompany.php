@@ -13,7 +13,7 @@
         }
         else{
              $sql = "INSERT INTO registercompany(COMPANY_NAME, EMAIL, PASS) VALUES ('$companyName', '$email', '$password')";
-                if ($conn->query($sql) == TRUE) {
+                if (mysqli_query($conn,$sql)) {
                     echo "New record created successfully";}
                 else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
