@@ -18,7 +18,7 @@ app.controller("jobcontroller", function($scope, $http){
         {
             alert("Requirement is required");
         }
-        else if($scope.vacancy == null)
+        else if($scope.vacancy == null) 
         {
             alert("Vacancy is required");
         }
