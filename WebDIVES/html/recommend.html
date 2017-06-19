@@ -46,17 +46,17 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid">
                     <!--<div class="container_table">-->
-                        <div ng-app="myapp" ng-controller="job_controller" ng-init="displayData()">
+                        <div ng-app="myapp" ng-controller="job_controller" ng-init="display()">
                             <table class="table table-bordered">  
                                 <tr>  
-                                    <th>JobId </th>
-                                    <th>Job Name</th>  
+                                    <th>Job Id </th>
+                                    <th>Job Names</th>  
                                     <th>Recommended Applicants</th>
                                 </tr>
-                                <tr ng-repeat="x in positions">
+                                <tr ng-repeat="x in order">
                                         <td>{{x.Id}}</td>  
                                         <td>{{x.Position}}</td>  
-                                        <td><button ng-click="displayData()" class="btn btn-info btn-xs">Show Rank</button></td>
+                                        <td><button class="btn btn-info btn-xs">Show Rank</button></td>
                                 </tr>  
                             </table> 
                         </div>
