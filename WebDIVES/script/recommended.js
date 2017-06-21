@@ -7,9 +7,6 @@ var app = angular.module("app",[]);
            });  
       }
       $scope.action = function(){  
-           $http.get("../php/rankalgo.php")  
-           .success(function(data){ 
-                 $scope.gain = data;   
-           });  
-      }
-});
+           $location.path("../html/test.html")  ;  
+      }}
+);  
