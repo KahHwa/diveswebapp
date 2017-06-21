@@ -72,7 +72,12 @@
       $Username = $output2[i][2];  
       $Score== $point[i] ; 
       $sql = "INSERT INTO Rank(Id, Username, Score) VALUES ('$Id', '$Username', '$Score')";
-      mysqli_query($connect,$sql);
+        if( mysqli_query($connect,$sql)){
+            echo 'Success';
+        }
+        else{
+            echo'failed';   
+        }
     }
   }
 
