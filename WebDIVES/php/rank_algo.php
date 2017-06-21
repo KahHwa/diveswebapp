@@ -67,9 +67,15 @@
         if ((keyword3== $output2[i][ii] )&& ii==5){
             $point[$x] += 200;
         }
-      }   
+      } 
+      $Id = $output2[i][1];  
+      $Username = $output2[i][2];  
+      $Score== $point[i] ; 
+      $sql = "INSERT INTO Rank(Id, Username, Score) VALUES ('$Id', '$Username', '$Score')";
+      mysqli_query($connect,$sql);
     }
   }
-echo json_encode($point);  
+
+   
 
  ?>
