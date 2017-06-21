@@ -47,13 +47,15 @@
             <div id="page-content-wrapper">
                 <div class="container-fluid">
                     <div ng-app="app" ng-controller="job_controller" ng-init="action()">
-                            {{p.Id}} 
-                            {{p.Position}}
-                            {{p.Requirement1}}
-                            {{p.Requirement2}}
-                            {{p.Requirement3}}
-                            <br><br><br><br>
+                        <p ng-repeat="x in positions">
+                            {{p.Id}}  <br>
+                            {{p.Position}} <br>
+                            {{p.Requirement1}} <br>
+                            {{p.Requirement2}} <br>
+                            {{p.Requirement3}} <br>
+                            <br><br><br>
                             <button class="btn btn-info btn-xs"><a href= "recommend.html">Back</a></button>
+                        </p>
                     </div>
                 </div>
             </div>
