@@ -7,7 +7,7 @@ var app = angular.module("app",[]);
            });  
       }
       $scope.action = function(){  
-           $http.get("../php/select_recommended.php")  
+           $http.get("../php/rank_algo.php")  
            .success(function(data){  
                 $scope.or = data;  
            });  
