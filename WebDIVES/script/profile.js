@@ -63,7 +63,7 @@ app.controller("jobcontroller", function($scope, $http){
         $scope.vacancy = Vacancy;
         $scope.applicants = Applicants;
         $scope.job_status = Job_status;
-        $scope.btnName = "Update";
+        $scope.btnName = "Update"
     }
     $scope.deleteData = function(Id){
         if(confirm("Are you sure want to delete this data?")){

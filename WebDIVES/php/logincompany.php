@@ -1,9 +1,6 @@
-<html>
-<body>
+<html><body>
     <?php 
-
         require 'connection.php';
-
         $email = $_POST["email"];
         $password = $_POST["password"];
         $query = mysql_query("SELECT * FROM registercompany where EMAIL='$email'");
@@ -32,6 +29,5 @@
             echo "Cannot find company";
         }
     ?>
-</body>
-</html>
+</body></html>
 

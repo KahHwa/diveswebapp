@@ -3,15 +3,9 @@ $servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
 $username = "b0ee69da112db5";
 $password = "55cc88e9";
 $database = "diveswebapp";
-/*
-$servername1 = "localhost";
-$username1 = "root";
-$password1 = "";
-$database1 = "diveswebapp";
-*/
 
 // Create connectionssss
-$conn = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");
+$conn = new mysqli($servername, $username,$password, $password);
 
 // Check connection
 if ($conn->connect_errno) {
@@ -19,3 +13,4 @@ if ($conn->connect_errno) {
 } 
 echo "Connected To database successfully\n";
 ?>
+
