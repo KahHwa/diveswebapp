@@ -7,6 +7,6 @@ var app = angular.module("app",[]);
            });  
       }
       $scope.action = function(){  
-           $location.path("../html/test.html")  ;  
+           $location.path("../php/test.php")  ;  
       }}
 );  
