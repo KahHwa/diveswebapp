@@ -6,7 +6,4 @@ var app = angular.module("app",[]);
                 $scope.order = data;  
            });  
       }
-      $scope.action = function(){  
-           $location.path("../php/test.php")  ;  
-      }}
-);  
+ });  
