@@ -44,6 +44,7 @@
                 }
         }*/
     ?>
-    <a href="../html/dashboard.html">Click Here to Continue</a>
+    <br>
+    <a href="../html/dashboard.html"> Click Here to Continue</a>
 </body>
 </html>
