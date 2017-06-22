@@ -3,7 +3,7 @@
         include ("recommend_home.php");
     }
     
-    $sql = "SELECT test_data.Id, test_data.Name, test_data.Skill1, test_data.Skill2, test_data.Skill3, microsoft_job.Id AS JOBID, microsoft_job.Position AS JOBTITLE FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoft_job.Requirement1 or test_data.Skill2=microsoft_job.Requirement2 or test_data.Skill3=microsoft_job.Requirement3 WHERE microsoft_job.Id=".$_GET['Id']; 
+    $sql = "SELECT test_data.Id, test_data.Name, test_data.Skill1, test_data.Skill2, test_data.Skill3, microsoft_job.Id AS JOBID, microsoft_job.Position AS JOBTITLE FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoft_job.Requirement1 or test_data.Skill2=microsoft_job.Requirement2 or test_data.Skill3=microsoft_job.Requirement3 WHERE microsoft_job.Id=".$_GET['JobId']; 
     $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
                                     
     if($query= mysqli_query($connect, $sql)){
@@ -14,7 +14,7 @@
     }
     else{
 ?>
-        <h1>Applicant rank for Job Id: <?php echo $result['JOBID']; ?> Job Position: <?php echo $result['JOBTITLE']; ?></h1>
+        <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $result['JOBID']; ?> Job Position: <?php echo $result['JOBTITLE']; ?></h3>
         <div>
              <table class="table table-bordered">  
                 <tr>  
