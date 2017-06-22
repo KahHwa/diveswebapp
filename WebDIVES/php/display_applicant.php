@@ -12,7 +12,4 @@
       }  
       echo json_encode($output);  
  }  
- else {
-     echo "No output";
- }
  ?>
