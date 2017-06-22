@@ -2,7 +2,8 @@
     if (!isset ($_GET['JobId'])){
         include ("recommend_home.php");
     }
-    $sql = "SELECT test_data.Id, test_data.Name, test_data.Skill1, test_data.Skill2, test_data.Skill3, microsoft_job.Id, microsoft_job.Position FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoftjob_Requirement1 or test_data.Skill2=microsoftjob_Requirement2 or test_data.Skill3=microsoftjob_Requirement3 WHERE microsoft_job.Id=".$_GET['Id']; 
+    
+    $sql = "SELECT test_data.Id, test_data.Name, test_data.Skill1, test_data.Skill2, test_data.Skill3, microsoft_job.Id, microsoft_job.Position FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoft_job.Requirement1 or test_data.Skill2=microsoft_job.Requirement2 or test_data.Skill3=microsoft_job.Requirement3 WHERE microsoft_job.Id=".$_GET['Id']; 
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
