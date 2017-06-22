@@ -7,7 +7,7 @@ var app = angular.module("app",[]);
            });  
       }
       $scope.action = function(){  
-           $http.get("../php/rank_algo.php")  
+           $http.get("../php/display_applicant.php")  
            .success(function(data){  
                 $scope.or = data;  
            });  
