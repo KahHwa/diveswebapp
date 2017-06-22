@@ -65,14 +65,14 @@
                                       $result = mysqli_fetch_assoc($query);      
                                     do {
                                     ?>
-                                    <tr>
-                                        <td>id=<?php echo $result['Id'] ?></td>  
+                                <tr>
+                                        <td><?php echo $result['Id'] ?></td>  
                                         <td><?php echo $result['Position'] ?></td>  
                                         <td><?php echo $result['Requirement1'] ?></td>
                                         <td><?php echo $result['Requirement2'] ?></td>
                                         <td><?php echo $result['Requirement3'] ?></td>
-                                        <td><a class="btn btn-info btn-xs" href="none.html?page=job&JobId=<?php echo $result['Id'];?>">Show Rank for <?php echo $result['Position']; ?></a></td>
-                                    </tr>  
+                                        <td><a class="btn btn-info btn-xs" href="none.html?page=job&JobId=<?php echo $result['Id'];?>">Show Rank For <?php echo $result['Position']; ?></a></td>
+                                </tr>  
                                 <?php }while($result=mysqli_fetch_assoc($query))?>
                             </table> 
                         </div>
