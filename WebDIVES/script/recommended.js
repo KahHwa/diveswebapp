@@ -7,7 +7,7 @@ var app = angular.module("app",[]);
            });  
       }
 });  
-var app = angular.module("apps",[]);  
+var app = angular.module("appl",[]);  
  app.controller("rank_controller", function($scope, $http){
 
       $scope.dis = function(){  
