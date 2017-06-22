@@ -11,8 +11,9 @@
     }
     else{
 ?>
-        <h1>Applicant rank for Job Id =<?php echo " ".$_GET['Id']; ?> and Job Position :<?php echo $result['Position']; ?> </h1>
-            <table class="table table-bordered">  
+        <h1>Applicant rank for Job Position: <?php echo $result['Position']; ?> Job Id: <?php echo $result['Id']; ?></h1>
+        <div>
+             <table class="table table-bordered">  
                 <tr>  
                    <th>Applicant Id </th>
                    <th>Applicant Name</th>  
@@ -21,32 +22,17 @@
                    <th>Skill 3</th>
                 </tr>
                    <?php
-                    $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
-                    $sql= "SELECT * FROM microsoft_job";
-                    $query = mysqli_query($connect, $sql);
-                    $result = mysqli_fetch_assoc($query);      
-                do {
+                   do {
                    ?>
                 <tr>
-                  <td><?php echo $result['Id'] ?></td>  
-                  <td><?php echo $result['Position'] ?></td>  
-                  <td><?php echo $result['Requirement1'] ?></td>
-                  <td><?php echo $result['Requirement2'] ?></td>
-                  <td><?php echo $result['Requirement3'] ?></td>
-                  <td><a class="btn btn-info btn-xs" href="recommend.php?page=job&JobId=<?php echo $result['Id'];?>">Show Rank For <?php echo $result['Position']; ?></a></td>
+                  <td><?php echo $result['test_data.Id'] ?></td>  
+                  <td><?php echo $result['test_data.Name'] ?></td>  
+                  <td><?php echo $result['test_data.Skill1'] ?></td>
+                  <td><?php echo $result['test_data.Skill2'] ?></td>
+                  <td><?php echo $result['test_data.Skill3'] ?></td>
                 </tr>  
             <?php }while($result=mysqli_fetch_assoc($query))?>
            </table>
-        
-        
-        
-        
-        
-        
-        
-        <h1><?php echo $result['']; ?></h1>
-        echo "User with Highest Ranked are: ";
-
-    }
-<?php
+        </div>
+<?php }
 ?>
