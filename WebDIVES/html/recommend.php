@@ -73,7 +73,7 @@
                                             <?php
                                             do {
                                             ?>
-                                             <a class="btn btn-info btn-xs" href="none.html?page=job&JobId=<?php echo $result['Id'];?>">Show Rank</a>
+                                             <a class="btn btn-info btn-xs" href="none.html?page=job&JobId=<?php echo $result['Id'];?>">Show Rank for <?php echo $result['Position']; ?></a>
                                             <?php }while($result=mysqli_fetch_assoc($result))?>                                                                                                                                                        
                                         </td>
                                 </tr>  
