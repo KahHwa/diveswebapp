@@ -70,7 +70,7 @@
                                                 $query = mysqli_query($connect, $sql);
                                                 $result = mysqli_fetch_assoc($query);    
                                             ?>
-                                             <a class="btn btn-info btn-xs" href="none.html?page=job&Id=<?php echo $result['Id']?>">Show Rank</a>
+                                             <a class="btn btn-info btn-xs" href="none.html?page=job&Id=<?php echo $result['Id'];?>">Show Rank</a>
                                         </td>
                                 </tr>  
                             </table> 
