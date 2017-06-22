@@ -9,8 +9,8 @@
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
-    if(mysqli_num_rows($query)==0){
-        echo "Sorry,no applicant match the criterion";
+    if(mysqli_num_rows($query)==0){?>
+       <h3> <?php echo "Sorry,no applicant match the criterion";?> </h3><?php
     }
     else{
 ?>
@@ -28,11 +28,11 @@
                    do {
                    ?>
                 <tr>
-                  <td><?php echo $result['test_data.Id'] ?></td>  
-                  <td><?php echo $result['test_data.Name'] ?></td>  
-                  <td><?php echo $result['test_data.Skill1'] ?></td>
-                  <td><?php echo $result['test_data.Skill2'] ?></td>
-                  <td><?php echo $result['test_data.Skill3'] ?></td>
+                  <td><?php echo $result['USERID'] ?></td>  
+                  <td><?php echo $result['USERNAME'] ?></td>  
+                  <td><?php echo $result['SKILL1'] ?></td>
+                  <td><?php echo $result['SKILL2'] ?></td>
+                  <td><?php echo $result['SKILL3'] ?></td>
                 </tr>  
             <?php }while($result=mysqli_fetch_assoc($query))?>
            </table>
