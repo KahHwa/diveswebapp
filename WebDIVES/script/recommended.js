@@ -12,4 +12,11 @@ var app = angular.module("app",[]);
                 $scope.or()= data;  
            });  
       }
+
+      $scope.dis = function(){  
+           $http.get("../php/display_allapllicant.php")  
+           .success(function(data){  
+                $scope.or()= data;  
+           });  
+      }
  });  
