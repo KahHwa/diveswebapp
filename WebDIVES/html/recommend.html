@@ -34,7 +34,7 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li><a href="dashboard.html">Dashboard</a></li>
-                    <li class="active"><a href="deletesoon.php">Recommendation</a></li>
+                    <li class="active"><a href="recommend.php">Recommendation</a></li>
                     <li><a href="message.html">Message</a></li>   
                 </ul>
                 <ul class="sidebar-nav">
@@ -63,7 +63,7 @@
                                         <td>{{p.Requirement1}}</td>
                                         <td>{{p.Requirement2}}</td>
                                         <td>{{p.Requirement3}}</td>
-                                        <td><a class="btn btn-info btn-xs" href="applicant_rank.html?page=job&Id=<?php echo $result['Id']?>">Show Rank</a></td>
+                                        <td><a class="btn btn-info btn-xs" href="deletesoon.php?page=job&Id=<?php echo $result['Id']?>">Show Rank</a></td>
                                 </tr>  
                             </table> 
                         </div>
