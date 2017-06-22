@@ -8,15 +8,22 @@
     $req3 = $data->req3;
     
     $output = array();
-    $query = "SELECT Id, Name, Skill1, Skill2, Skill3 FROM test_data WHERE Skill1='$req1' or Skill2='$req2' or Skill3='$req3'  ";  
+    $query = "SELECT Id, Name, Skill1, Skill2, Skill3 FROM test_data WHERE ((Skill1='$req1') or (Skill2='$req2') or (Skill3='$req3'))  ";  
     $result = mysqli_query($connect, $query); 
+    // if($result)  
+    // {  
+    //     echo "MATCHED APPLICANT SHOWN";  
+    // }  
+    // else{
+    //     echo "QUERY NOT EXECUTED";  
+    // }
     if(mysqli_num_rows($result) > 0)  
     {  
-        while($row = mysqli_fetch_array($result))  
-        {  
-            $output[] = $row;  
-        }  
-        echo json_encode($output);  
+      while($row = mysqli_fetch_array($result))  
+      {  
+           $output[] = $row;  
+      }  
+      echo json_encode($output);  
     }  
  }
  ?>
