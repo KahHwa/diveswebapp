@@ -6,6 +6,9 @@ var app = angular.module("app",[]);
                 $scope.order = data;  
            });  
       }
+});  
+var app = angular.module("apps",[]);  
+ app.controller("rank_controller", function($scope, $http){
 
       $scope.dis = function(){  
            $http.get("../php/display_applicant.php")  
