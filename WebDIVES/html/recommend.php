@@ -63,9 +63,10 @@
                                       $sql= "SELECT * FROM microsoft_job";
                                       $query = mysqli_query($connect, $sql);
                                       $result = mysqli_fetch_assoc($query);      
+                                    
                                     do {
                                     ?>
-                                        <td><?php echo $result['Id'] ?></td>  
+                                        <td>id=<?php echo $result['Id'] ?></td>  
                                         <td><?php echo $result['Position'] ?></td>  
                                         <td><?php echo $result['Requirement1'] ?></td>
                                         <td><?php echo $result['Requirement2'] ?></td>
