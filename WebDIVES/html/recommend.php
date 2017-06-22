@@ -34,7 +34,7 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li><a href="dashboard.html">Dashboard</a></li>
-                    <li class="active"><a href="recommend.html">Recommendation</a></li>
+                    <li class="active"><a href="recommend.php">Recommendation</a></li>
                     <li><a href="message.html">Message</a></li>   
                 </ul>
                 <ul class="sidebar-nav">
@@ -48,7 +48,6 @@
                 <div class="container-fluid">
                     <div class="container_table">
                         <div ng-app="app" ng-controller="job_controller" ng-init="display()">
-        
                             <table class="table table-bordered">  
                                 <tr>  
                                     <th>JobId </th>
@@ -64,7 +63,7 @@
                                         <td>{{p.Requirement1}}</td>
                                         <td>{{p.Requirement2}}</td>
                                         <td>{{p.Requirement3}}</td>
-                                        <td>
+                                       <td>
                                             <?php
                                                 $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
                                                 $sql= "SELECT * FROM microsoft_job";
