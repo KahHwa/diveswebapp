@@ -48,6 +48,12 @@
                 <div class="container-fluid">
                     <div class="container_table">
                         <div ng-app="app" ng-controller="job_controller" ng-init="display()">
+                            <?php
+                                require ('connection.php'); 
+                                $sql=SELECT * FROM microsoft_job;
+                                $query= mysqli_query($conn,$sql);
+                                $result=mysqli_fetch_assoc($query);
+                            ?>
                             <table class="table table-bordered">  
                                 <tr>  
                                     <th>JobId </th>
@@ -63,7 +69,7 @@
                                         <td>{{p.Requirement1}}</td>
                                         <td>{{p.Requirement2}}</td>
                                         <td>{{p.Requirement3}}</td>
-                                        <td><a class="btn btn-info btn-xs" href= "applicant_rank.html">Show Rank</a></td>
+                                        <td><a class="btn btn-info btn-xs" href= "applicant_rank.html?Id=<?php echo $result['Id'];?>">Show Rank</a></td>
                                 </tr>  
                             </table> 
                         </div>

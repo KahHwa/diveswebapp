@@ -68,9 +68,9 @@
             $point[$x] += 200;
         }
       } 
-      $Id = $output2[i][1];  
-      $Username = $output2[i][2];  
-      $Score= $point[i] ; 
+      $Id = mysqli_real_escape_string($connect, $output2[i][1]->Id);  
+      $Username = mysqli_real_escape_string($connect, $output2[i][2]->Username);  
+     $Score= mysqli_real_escape_string($connect, $point[i]->Score ); 
       $sql = "INSERT INTO Rank(Id, Username, Score) VALUES ('$Id', '$Username', '$Score')";
         if( mysqli_query($connect,$sql)){
             echo 'Success';
