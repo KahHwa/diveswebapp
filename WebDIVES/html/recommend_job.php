@@ -9,7 +9,7 @@
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
-    if(mysqli_num_rows($query)!=0){
+    if(mysqli_num_rows($query)==0){
         echo "Sorry,no applicant match the criterion";
     }
     else{
