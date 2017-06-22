@@ -6,15 +6,9 @@ var app = angular.module("app",[]);
                 $scope.order = data;  
            });  
       }
-      $scope.action = function(Requirement1,Requirement2,Requirement3){  
-           $http.get("../php/display_applicant.php", {'req1':Requirement1,'req2':Requirement2,'req3':Requirement3})  
-           .success(function(data){  
-                $scope.or()= data;  
-           });  
-      }
 
       $scope.dis = function(){  
-           $http.get("../php/display_allapllicant.php")  
+           $http.get("../php/display_applicant.php")  
            .success(function(data){  
                 $scope.or()= data;  
            });  
