@@ -6,4 +6,10 @@ var app = angular.module("app",[]);
                 $scope.order = data;  
            });  
       }
+      $scope.action = function(){  
+           $http.get("../php/display_applicant.php")  
+           .success(function(data){  
+                $scope.or()= data;  
+           });  
+      }
 });  
