@@ -48,6 +48,7 @@
                 <div class="container-fluid">
                     <div class="container_table">
                         <div ng-app="app" ng-controller="job_controller" ng-init="display()">
+        
                             <table class="table table-bordered">  
                                 <tr>  
                                     <th>JobId </th>
@@ -63,7 +64,15 @@
                                         <td>{{p.Requirement1}}</td>
                                         <td>{{p.Requirement2}}</td>
                                         <td>{{p.Requirement3}}</td>
-                                        <td><a class="btn btn-info btn-xs" href="applicant_rank.html?page=job&Id=<?php echo $result['Id']?>">Show Rank</a></td>
+                                        <td>
+                                            <?php
+                                                $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
+                                                $sql= "SELECT * FROM microsoft_job";
+                                                $query = mysqli_query($connect, $sql);
+                                                $result = mysqli_fetch_assoc($query);    
+                                            ?>
+                                             <a class="btn btn-info btn-xs" href="applicant_rank.html?page=job&Id=<?php echo $result['Id']?>">Show Rank</a>
+                                        </td>
                                 </tr>  
                             </table> 
                         </div>
