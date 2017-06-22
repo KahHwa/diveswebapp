@@ -4,6 +4,8 @@
     }
     
     $sql = "SELECT test_data.Id, test_data.Name, test_data.Skill1, test_data.Skill2, test_data.Skill3, microsoft_job.Id, microsoft_job.Position FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoft_job.Requirement1 or test_data.Skill2=microsoft_job.Requirement2 or test_data.Skill3=microsoft_job.Requirement3 WHERE microsoft_job.Id=".$_GET['Id']; 
+    $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
+                                    
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
