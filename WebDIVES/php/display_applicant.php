@@ -3,12 +3,12 @@
  $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
  $data = json_decode (file_get_contents("php://input"));
  if (count($data)>0){
-    $req1 = $data->req1;
-    $req2 = $data->req2;
-    $req3 = $data->req3;
+    $key1 = $data->req1;
+    $key2 = $data->req2;
+    $key3 = $data->req3;
     
     $output = array();
-    $query = "SELECT Id, Name, Skill1, Skill2, Skill3 FROM test_data WHERE ((Skill1='$req1') or (Skill2='$req2') or (Skill3='$req3'))  ";  
+    $query = "SELECT Id, Name, Skill1, Skill2, Skill3 FROM test_data WHERE ((Skill1='$key1') or (Skill2='$key2') or (Skill3='$key3'))  ";  
     $result = mysqli_query($connect, $query); 
     // if($result)  
     // {  
