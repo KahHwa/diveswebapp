@@ -8,7 +8,7 @@
     $key3 = $data->req3;
     
     $output = array();
-    $query = "SELECT Id, Name, Skill1, Skill2, Skill3 FROM test_data WHERE ((Skill1='$key1') or (Skill2='$key2') or (Skill3='$key3'))  ";  
+    $query = "SELECT Id, Name, Skill1, Skill2, Skill3 FROM test_data WHERE ((Skill1='html') or (Skill2='sql') or (Skill3='AI'))  ";  
     $result = mysqli_query($connect, $query); 
     // if($result)  
     // {  
