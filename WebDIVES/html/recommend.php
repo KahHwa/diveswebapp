@@ -49,11 +49,11 @@
                     <div class="container_table">        
                        <?php 
                             if (!isset($_GET['page'])){
-                                include ("home.php");
+                                include ("recommend_home.php");
                             }
                             else{
                                 $page = $_GET['page'];
-                                include ("$page.php");
+                                include ("recommend_$page.php");
                             }
                         ?>
                    </div>
