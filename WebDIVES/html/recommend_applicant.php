@@ -46,7 +46,6 @@
             <!-- Page content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
-                    <div class="container_table">        
                        <table class="table table-bordered">  
                                 <tr>  
                                     <th>JobId </th>
@@ -74,8 +73,15 @@
                                 </tr>  
                                 <?php }while($result=mysqli_fetch_assoc($query))?>
                             </table> 
-                   </div>
-                </div>
+                        <?php 
+                            if (!isset($_GET['page'])){
+                                include ("home.php");
+                            }
+                            else{
+                                $page = $_GET['page'];
+                                include ("$page.php");
+                            }
+                        ?>
                 </div>
             </div>
                  
