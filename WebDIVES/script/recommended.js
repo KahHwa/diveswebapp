@@ -6,8 +6,8 @@ var app = angular.module("app",[]);
                 $scope.order = data;  
            });  
       }
-      $scope.action = function(){  
-           $http.get("../php/display_applicant.php")  
+      $scope.action = function(Requirement1,Requirement2,Requirement3){  
+           $http.get("../php/display_applicant.php", {'req1':Requirement1,'req2':Requirement2,'req3':Requirement3})  
            .success(function(data){  
                 $scope.or = data;  
            });  
