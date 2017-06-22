@@ -7,7 +7,7 @@ var app = angular.module("app",[]);
            });  
       }
       $scope.action = function(Requirement1,Requirement2,Requirement3){  
-           $http.get("../php/display_applicant.php", {'req1':Requirement1,'req2':Requirement2,'req3':Requirement3})  
+           $http.post("../php/display_applicant.php", {'req1':Requirement1,'req2':Requirement2,'req3':Requirement3})  
            .success(function(data){  
                 $scope.or = data;  
            });  
