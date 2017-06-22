@@ -57,24 +57,22 @@
                                     <th>Requirement 3</th>
                                     <th>Recommended Applicants</th>
                                 </tr>
-                                <tr ng-repeat="p in order">
-                                        <td>{{p.Id}}</td>  
-                                        <td>{{p.Position}}</td>  
-                                        <td>{{p.Requirement1}}</td>
-                                        <td>{{p.Requirement2}}</td>
-                                        <td>{{p.Requirement3}}</td>
-                                       <td>
-                                            <?php
-                                                $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
-                                                $sql= "SELECT * FROM microsoft_job";
-                                                $query = mysqli_query($connect, $sql);
-                                                $result = mysqli_fetch_assoc($query);    
-                                            ?>
-                                            <?php
-                                            do {
-                                            ?>
-                                             <a class="btn btn-info btn-xs" href="none.html?page=job&JobId=<?php echo $result['Id'];?>">Show Rank for <?php echo $result['Position']; ?></a>
-                                            <?php }while($result=mysqli_fetch_assoc($result))?>                                                                                                                                                        
+                                <tr>
+                                    <?php
+                                      $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
+                                      $sql= "SELECT * FROM microsoft_job";
+                                      $query = mysqli_query($connect, $sql);
+                                      $result = mysqli_fetch_assoc($query);      
+                                    do {
+                                    ?>
+                                        <td><?php echo $result['Id'] ?></td>  
+                                        <td><?php echo $result['Position'] ?></td>  
+                                        <td><?php echo $result['Requirement1'] ?></td>
+                                        <td><?php echo $result['Requirement2'] ?></td>
+                                        <td><?php echo $result['Requirement3'] ?></td>
+                                        <td>     
+                                            <a class="btn btn-info btn-xs" href="none.html?page=job&JobId=<?php echo $result['Id'];?>">Show Rank for <?php echo $result['Position']; ?></a>
+                                            <?php }while($result=mysqli_fetch_assoc($query))?>                                                                                                                                                        
                                         </td>
                                 </tr>  
                             </table> 
