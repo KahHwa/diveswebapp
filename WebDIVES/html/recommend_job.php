@@ -10,21 +10,32 @@ if (!isset ($_GET['JobId'])){
     $keyword1 = $result1['Requirement1'];
     $keyword2 = $result1['Requirement2'];
     $keyword3 = $result1['Requirement3'];
+    
     $sql ="SELECT * FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
-    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%'ORDER BY Percentage";
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%'";
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
+    
     while($result=mysqli_fetch_assoc($query)){
         similar_text("$result['Skill1'];","$keyword1","$percent1");    
         similar_text("$result['Skill2'];","$keyword2","$percent2");
         similar_text("$result['Skill3'];","$keyword3","$percent3");
         $percent =$percent1 + $percent2 + $percent3;
-        $update = "UPDATE test_data SET Percentage=$percent";
-        mysqli_connect($connect,$update);
+        $update = "UPDATE test_data SET Percentage=$percent WHERE 'Id'= "$result['Id'];" ";
+        mysqli_query($connect,$update);
     }
+
+    $sql ="SELECT * FROM test_data WHERE 
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%' ORDER BY Percentage";
+    if($query= mysqli_query($connect, $sql)){
+        $result=mysqli_fetch_assoc($query);
+    }
+    
 ?>
     <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>-Job Position: <?php echo $result1['Position']; ?></h3>
     <br>
