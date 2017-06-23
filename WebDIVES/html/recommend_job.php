@@ -20,11 +20,11 @@ if (!isset ($_GET['JobId'])){
     }
     
     while($result=mysqli_fetch_assoc($query)){
-        similar_text("$result['Skill1'];","$keyword1","$percent1");    
-        similar_text("$result['Skill2'];","$keyword2","$percent2");
-        similar_text("$result['Skill3'];","$keyword3","$percent3");
+        similar_text("echo $result['Skill1'];","$keyword1","$percent1");    
+        similar_text("echo $result['Skill2'];","$keyword2","$percent2");
+        similar_text("echo $result['Skill3'];","$keyword3","$percent3");
         $percent =$percent1 + $percent2 + $percent3;
-        $update = "UPDATE test_data SET Percentage=$percent WHERE 'Id'= "$result['Id'];" ";
+        $update = "UPDATE test_data SET Percentage=$percent WHERE 'Id'= "echo $result['Id'];" ";
         mysqli_query($connect,$update);
     }
 
