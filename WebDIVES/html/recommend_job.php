@@ -15,7 +15,7 @@
     
     ?>
 
-    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?> - <?php echo $result1['POSITION']; ?></h3>
+    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>- <?php echo $result1['POSITION']; ?></h3>
     <br>
     <?php
     if(mysqli_num_rows($query)==0){?>
