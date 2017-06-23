@@ -10,8 +10,10 @@ if (!isset ($_GET['JobId'])){
     $keyword1 = $result1['Requirement1'];
     $keyword2 = $result1['Requirement2'];
     $keyword3 = $result1['Requirement3'];
-
-    $sql ="SELECT * FROM test_data WHERE concat(Skill1,Skill2,Skill3) LIKE ''%'.$keyword1.'%'' or ''%'.$keyword2.'%'' or ''%'.$keyword3.'%''";
+    echo ' '.$keyword1. ' ';
+    echo ' '.$keyword1. ' ' ;
+    echo ' '.$keyword3. ' ';
+    $sql ="SELECT * FROM test_data WHERE CONCAT(Skill1,Skill2,Skill3) LIKE ''%'.$keyword1.'%'' or ''%'.$keyword2.'%'' or ''%'.$keyword3.'%''";
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
