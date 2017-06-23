@@ -17,12 +17,43 @@ if (!isset ($_GET['JobId'])){
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
-    else{
-        echo "Error". mysqli_error_list() ;
+while (($result=mysqli_fetch_assoc($query)))    {
+    $array_point = array ( $result['Id'] => 0 );
     }
+while (($result=mysqli_fetch_assoc($query))){
+    if ($keyword1 == $result['Skill1']){
+        $array_point[$result['Id']]+=1000;
+    }
+    if ($keyword1 == $result['Skill2']){
+        $array_point[$result['Id']]+=900;    
+    }
+    if ($keyword1 == $result['Skill3']){
+        $array_point[$result['Id']]+=800;
+    }
+    if ($keyword2 == $result['Skill1']){
+        $array_point[$result['Id']]+=700;
+    }
+    if ($keyword2 == $result['Skill2']){
+        $array_point[$result['Id']]+=600;
+    }
+    if ($keyword2 == $result['Skill3']){
+        $array_point[$result['Id']]+=500;
+    }
+    if ($keyword3 == $result['Skill1']){
+        $array_point[$result['Id']]+=400;
+    }
+    if ($keyword3 == $result['Skill2']){
+        $array_point[$result['Id']]+=300;
+    }
+    if ($keyword3 == $result['Skill3']){
+        $array_point[$result['Id']]+=200;
+    }
+}
+while (($result=mysqli_fetch_assoc($query))){
+    echo $array_point[$result['Id']] "\n ";
+}
+
 ?>
-
-
     <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?> - Job Position: <?php echo $result1['Position']; ?></h3>
     <br>
     <?php
