@@ -24,8 +24,8 @@ if (!isset ($_GET['JobId'])){
         similar_text("$result['Skill2'];","$keyword2","$percent2");
         similar_text("$result['Skill3'];","$keyword3","$percent3");
         $percent =$percent1 + $percent2 + $percent3;
-        $update = "UPDATE test_data SET Percentage='$percent' WHERE Id= "echo $result['Id'];" ";
-        mysqli_query($connect,$update);
+        $update = "UPDATE test_data SET Percentage='$percent' WHERE Id= ".$result['Id'];
+        $qur= mysqli_query($connect,$update);
     }
     
 ?>
