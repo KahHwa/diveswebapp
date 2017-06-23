@@ -2,7 +2,20 @@
 if (!isset ($_GET['JobId'])){
      include ("recommend_home.php");
  }
-    $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
+  $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
+  
+
+ $sql2= "SELECT * FROM test_data";
+ $qr = mysqli_connect($connect,$sql2);
+ while ($rs=mysql_fetch_assoc($sql2)){
+     $update = "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result['Id'];
+ }
+
+
+ while($result=mysqli_fetch_assoc($query)){
+    
+        $qur= mysqli_query($connect,$update);
+}
     $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
     if($query1= mysqli_query($connect, $sql1)){
         $result1=mysqli_fetch_assoc($query1);
