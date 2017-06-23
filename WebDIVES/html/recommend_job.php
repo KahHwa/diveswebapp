@@ -31,7 +31,7 @@ if (!isset ($_GET['JobId'])){
 ?>
 
 
-    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>- Position: <?php echo $result1['POSITION'] ?></h3>
+    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>- Position: <?php echo $result1['POSITION']; ?></h3>
     <br>
     <?php
     if(mysqli_num_rows($query)==0){?>
@@ -52,11 +52,11 @@ if (!isset ($_GET['JobId'])){
                    do {
                    ?>
                 <tr>
-                  <td><?php echo $result['USERID'] ?></td>  
-                  <td><?php echo $result['USERNAME'] ?></td>  
-                  <td><?php echo $result['SKILL1'] ?></td>
-                  <td><?php echo $result['SKILL2'] ?></td>
-                  <td><?php echo $result['SKILL3'] ?></td>
+                  <td><?php echo $result['USERID']; ?></td>  
+                  <td><?php echo $result['USERNAME']; ?></td>  
+                  <td><?php echo $result['SKILL1']; ?></td>
+                  <td><?php echo $result['SKILL2']; ?></td>
+                  <td><?php echo $result['SKILL3']; ?></td>
                 </tr>  
             <?php }while($result=mysqli_fetch_assoc($query))?>
            </table>
