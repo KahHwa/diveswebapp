@@ -24,7 +24,7 @@ if (!isset ($_GET['JobId'])){
     <br>
     <?php
 
-    if(mysqli_num_rows($query)!=0){?>
+    if(mysqli_num_rows($query)==0){?>
        <h5> <?php echo "Sorry,no applicant match the criterion";?> </h5><?php
     }
     else{
