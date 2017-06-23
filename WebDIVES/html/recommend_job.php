@@ -1,4 +1,7 @@
 <?php
+if (!isset ($_GET['JobId'])){
+     include ("recommend_home.php");
+ }
     $sql = "SELECT test_data.Id AS USERID, test_data.Name AS USERNAME, test_data.Skill1 AS SKILL1, test_data.Skill2 AS SKILL2, test_data.Skill3 AS SKILL3, microsoft_job.Id AS JOBID, microsoft_job.Position AS JOBTITLE FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoft_job.Requirement1 or test_data.Skill2=microsoft_job.Requirement2 or test_data.Skill3=microsoft_job.Requirement3 WHERE microsoft_job.Id=".$_GET['JobId']; 
     $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
     $sql1= "SELECT microsoft_job.Position AS POSITION, microsoft_job.Requirement1 AS Key1, microsoft_job.Requirement2 AS Key2, microsoft_job.Requirement3 AS Key3,  FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
@@ -9,22 +12,22 @@
         $result1=mysqli_fetch_assoc($query1);
     }
     
-    function KMP ($quest){
-    $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");      
-    $KMP_result = mysqli_query($connect, $quest)
-    return $KMP_result;
-    }
+    // function KMP ($quest){
+    //     $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");      
+    //     $KMP_result = mysqli_query($connect, $quest)
+    //     return $KMP_result;
+    // }
 
-    if (!isset ($_GET['JobId'])){
-        include ("recommend_home.php");
-    }
-    else{
-        $keyword1 =  $result1['Key1'];
-        $keyword2 =  $result1['Key2'];
-        $keyword3 =  $result1['Key3'];
-        $quest= "SELECT * FROM test_data WHERE CONCAT('Skill1','Skill2','Skill3') LIKE '$keyword1' or '$keyword2' or' $keyword3'";
-        $search_result= KMP($quest);
-    } 
+    // if (!isset ($_GET['JobId'])){
+    //     include ("recommend_home.php");
+    // }
+    // else{
+    //     $keyword1 =  $result1['Key1'];
+    //     $keyword2 =  $result1['Key2'];
+    //     $keyword3 =  $result1['Key3'];
+    //     $quest= "SELECT * FROM test_data WHERE CONCAT('Skill1','Skill2','Skill3') LIKE '$keyword1' or '$keyword2' or' $keyword3'";
+    //     $search_result= KMP($quest);
+    // } 
 ?>
 
 
@@ -55,7 +58,7 @@
                   <td><?php echo $result['SKILL2'] ?></td>
                   <td><?php echo $result['SKILL3'] ?></td>
                 </tr>  
-            <?php }while($result=mysqli_fetch_assoc($search_result))?>
+            <?php }while($result=mysqli_fetch_assoc($query))?>
            </table>
         </div>
         
