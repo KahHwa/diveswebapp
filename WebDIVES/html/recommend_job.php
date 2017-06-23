@@ -27,7 +27,11 @@ if (!isset ($_GET['JobId'])){
         $update = "UPDATE test_data SET Percentage=$percent WHERE Id=".$result['Id'];
         $qur= mysqli_query($connect,$update);
     }
-    $sqls ="SELECT * FROM test_data ORDER BY Percentage DESC";
+    
+    $sqls ="SELECT * FROM test_data WHERE 
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%' ORDER BY Percentage DESC";
     if($q= mysqli_query($connect, $sqls)){
         $res=mysqli_fetch_assoc($q);
     }
