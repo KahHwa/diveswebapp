@@ -8,13 +8,14 @@
                                     
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
-    }
+    }?>
+    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $result['JOBID']; ?> Job Position: <?php echo $result['JOBTITLE']; ?></h3>
+    <?php
     if(mysqli_num_rows($query)==0){?>
        <h3> <?php echo "Sorry,no applicant match the criterion";?> </h3><?php
     }
     else{
 ?>
-        <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $result['JOBID']; ?> Job Position: <?php echo $result['JOBTITLE']; ?></h3>
         <div>
              <table class="table table-bordered">  
                 <tr>  
