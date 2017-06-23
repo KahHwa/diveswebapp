@@ -5,7 +5,7 @@
     
     $sql = "SELECT test_data.Id AS USERID, test_data.Name AS USERNAME, test_data.Skill1 AS SKILL1, test_data.Skill2 AS SKILL2, test_data.Skill3 AS SKILL3, microsoft_job.Id AS JOBID, microsoft_job.Position AS JOBTITLE FROM test_data JOIN microsoft_job ON test_data.Skill1=microsoft_job.Requirement1 or test_data.Skill2=microsoft_job.Requirement2 or test_data.Skill3=microsoft_job.Requirement3 WHERE microsoft_job.Id=".$_GET['JobId']; 
     $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
-    $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
+    $sql1= "SELECT microsoft_job.Position AS POSITION FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
@@ -15,7 +15,7 @@
     
     ?>
 
-    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?> - <?php echo $result1['micosoft_job.Position']; ?></h3>
+    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?> - <?php echo $result1['POSITION']; ?></h3>
     <br>
     <?php
     if(mysqli_num_rows($query)==0){?>
