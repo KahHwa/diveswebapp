@@ -13,7 +13,7 @@ if (!isset ($_GET['JobId'])){
     $sql ="SELECT * FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
-    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%'";
+    CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%'";
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
