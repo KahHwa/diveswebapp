@@ -31,7 +31,9 @@ if (!isset ($_GET['JobId'])){
        <h5> <?php echo "Sorry,no applicant match the criterion";?> </h5><?php
     }
     else{
+         
     ?>
+    <br><p>Total Matched Applicant: <?php echo mysqli_num_rows($query); ?> Result </p>
         <div>
              <table class="table table-bordered">  
                 <tr>  
