@@ -14,6 +14,9 @@ if (!isset ($_GET['JobId'])){
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
+    else{
+        echo "Error". mysqli_error_list() ;
+    }
 ?>
 
 
