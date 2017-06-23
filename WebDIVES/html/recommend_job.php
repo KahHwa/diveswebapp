@@ -27,7 +27,10 @@ if (!isset ($_GET['JobId'])){
         $update = "UPDATE test_data SET Percentage=$percent WHERE Id=".$result['Id'];
         $qur= mysqli_query($connect,$update);
     }
-    
+    $sqls ="SELECT * FROM test_data ORDER BY Percentage";
+    if($q= mysqli_query($connect, $sqls)){
+        $res=mysqli_fetch_assoc($q);
+    }
 ?>
     <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>-Job Position: <?php echo $result1['Position']; ?></h3>
     <br>
@@ -59,7 +62,7 @@ if (!isset ($_GET['JobId'])){
                   <td><?php echo $result['Skill2']; ?></td>
                   <td><?php echo $result['Skill3']; ?></td>
                 </tr>  
-            <?php }while($result=mysqli_fetch_assoc($query))?>
+            <?php }while($result=mysqli_fetch_assoc($q))?>
            </table>
         </div>
         
