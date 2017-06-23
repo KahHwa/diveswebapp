@@ -31,14 +31,14 @@ if (!isset ($_GET['JobId'])){
 ?>
 
 
-    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>- <?php echo $result1['POSITION']; ?></h3>
+    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>- Position: <?php echo $result1['POSITION'] ?></h3>
     <br>
     <?php
     if(mysqli_num_rows($query)==0){?>
        <h5> <?php echo "Sorry,no applicant match the criterion";?> </h5><?php
     }
     else{
-?>
+    ?>
         <div>
              <table class="table table-bordered">  
                 <tr>  
