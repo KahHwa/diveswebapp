@@ -12,23 +12,6 @@ if (!isset ($_GET['JobId'])){
     if($query1= mysqli_query($connect, $sql1)){
         $result1=mysqli_fetch_assoc($query1);
     }
-    
-    // function KMP ($quest){
-    //     $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");      
-    //     $KMP_result = mysqli_query($connect, $quest)
-    //     return $KMP_result;
-    // }
-
-    // if (!isset ($_GET['JobId'])){
-    //     include ("recommend_home.php");
-    // }
-    // else{
-    //     $keyword1 =  $result1['Key1'];
-    //     $keyword2 =  $result1['Key2'];
-    //     $keyword3 =  $result1['Key3'];
-    //     $quest= "SELECT * FROM test_data WHERE CONCAT('Skill1','Skill2','Skill3') LIKE '$keyword1' or '$keyword2' or' $keyword3'";
-    //     $search_result= KMP($quest);
-    // } 
 ?>
 
     <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?> - Job Position: <?php echo $result1['Position']; ?></h3>
