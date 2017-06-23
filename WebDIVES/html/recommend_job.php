@@ -9,7 +9,7 @@
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }?>
-    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $result['JOBID']; ?> <br>Job Position: <?php echo $result['JOBTITLE']; ?></h3>
+    <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $result['JOBID']; ?> </h3> <br><h3>Job Position: <?php echo $result['JOBTITLE']; ?></h3>
     <?php
     if(mysqli_num_rows($query)==0){?>
        <h5> <?php echo "Sorry,no applicant match the criterion";?> </h5><?php
