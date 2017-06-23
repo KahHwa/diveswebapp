@@ -33,7 +33,7 @@ if (!isset ($_GET['JobId'])){
     else{
          
     ?>
-    <br><p>Total Matched Applicant: <?php echo mysqli_num_rows($query); ?> Result </p>
+    <p>Total Matched Applicant: <?php echo mysqli_num_rows($query); ?> Results </p>
         <div>
              <table class="table table-bordered">  
                 <tr>  
