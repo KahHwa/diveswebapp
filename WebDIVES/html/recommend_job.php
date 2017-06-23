@@ -37,5 +37,7 @@
             <?php }while($result=mysqli_fetch_assoc($query))?>
            </table>
         </div>
+        
 <?php }
 ?>
+<a class="btn btn-info btn-xs" href="recommend.php">Back</a>
