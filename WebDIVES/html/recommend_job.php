@@ -70,6 +70,8 @@ if (!isset ($_GET['JobId'])){
                    <th>Skill 3</th>
                    <th>Score</th>
                 </tr>
+                <tr>
+                </tr>
                    <?php
                    do {
                    ?>
