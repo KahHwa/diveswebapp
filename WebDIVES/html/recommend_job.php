@@ -10,7 +10,7 @@ if (!isset ($_GET['JobId'])){
     $keyword1 = $result1['Requirement1'];
     $keyword2 = $result1['Requirement2'];
     $keyword3 = $result1['Requirement3'];
-    $sql ="SELECT * FROM test_data WHERE CONCAT(Skill1,Skill2,Skill3) LIKE ''%'.$keyword1.'%'' or ''%'.$keyword2.'%'' or ''%'.$keyword3.'%''";
+    $sql ="SELECT * FROM test_data WHERE CONCAT(Skill1,Skill2,Skill3) LIKE '%".$keyword1."%' or '%".$keyword2."%' or '%".$keyword3."%'";
     if($query= mysqli_query($connect, $sql)){
         $result=mysqli_fetch_assoc($query);
     }
@@ -18,16 +18,10 @@ if (!isset ($_GET['JobId'])){
 
 
     <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?> - Job Position: <?php echo $result1['Position']; ?></h3>
-    <br ><br>
-    <?PHP 
-        echo ' '.$keyword1. ' ';
-        echo ' '.$keyword1. ' ' ;
-        echo ' '.$keyword3. ' ';
-    ?>
     <br>
     <?php
 
-    if(mysqli_num_rows($query)==0){?>
+    if(mysqli_num_rows($query)!=0){?>
        <h5> <?php echo "Sorry,no applicant match the criterion";?> </h5><?php
     }
     else{
