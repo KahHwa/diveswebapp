@@ -63,6 +63,7 @@ if (!isset ($_GET['JobId'])){
         <div>
              <table class="table table-bordered">  
                 <tr>  
+                   <th>#Rank</th>
                    <th>Applicant Id </th>
                    <th>Applicant Name</th>  
                    <th>Skill 1</th>
@@ -72,10 +73,13 @@ if (!isset ($_GET['JobId'])){
                 </tr>
                 <tr>
                 </tr>
+                    
                    <?php
+                   $idx=1;
                    do {
                    ?>
                 <tr>
+                  <td> <?php echo $idx; ?> </td>
                   <td><?php echo $result['Id']; ?></td>  
                   <td><?php echo $result['Name']; ?></td>  
                   <td><?php echo $result['Skill1']; ?></td>
@@ -83,7 +87,7 @@ if (!isset ($_GET['JobId'])){
                   <td><?php echo $result['Skill3']; ?></td>
                   <td><?php echo $result['Percentage']; ?></td>
                 </tr>  
-            <?php }while($result=mysqli_fetch_assoc($q))?>
+            <?php $idx +=1;}while($result=mysqli_fetch_assoc($q))?>
            </table>
         </div>
         

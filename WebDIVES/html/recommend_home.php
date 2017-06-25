@@ -21,7 +21,7 @@
                                         <td><?php echo $res['Requirement1']; ?></td>
                                         <td><?php echo $res['Requirement2']; ?></td>
                                         <td><?php echo $res['Requirement3']; ?></td>
-                                        <td><a class="btn btn-info btn-xs" href="recommend.php?page=job&JobId=<?php echo $res['Id'];?>">Show Rank For <?php echo $res['Position']; ?></a></td>
+                                        <td><a class="btn btn-info btn-xs" href="recommend.php?page=job&JobId=<?php echo $res['Id'];?>">Show Results></a></td>
                                 </tr>  
                                 <?php }while($res=mysqli_fetch_assoc($q))?>
 </table>
