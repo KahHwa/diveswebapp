@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link rel="stylesheet"  href="../style/options.css">
+        <link rel="stylesheet"  href="webdives/style/options.css">
         <link rel="icon" href="/img/elg.ico"/>
     </head>
     <body>
@@ -19,13 +19,13 @@
                 </div>
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="loginorganizer.php?page=login&role=organizer">JOB ORGANIZER</a>
+                <a class="btn btn-default" role="button" href="webdives/html/loginorganizer.html">JOB ORGANIZER</a>
             </div>
             <div class="selector">
                 OR
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="logincompany.php?page=login&orle=company">COMPANY</a>
+                <a class="btn btn-default" role="button" href="webdives/html/logincompany.html">COMPANY</a>
             </div>
         </div>
     </body>
