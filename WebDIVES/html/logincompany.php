@@ -20,6 +20,16 @@
                 </div>
             </div>
             <div class="input-form">
+                <?php 
+                            if (!isset($_GET['page'])){
+                                include ("options.php");
+                            }
+                            else{
+                                $page = $_GET['page'];
+                                $role = $_GET['role']
+                                include ("$page$role.php");
+                            }
+                ?>
                 <form name="logincompany" action="../php/logincompany.php" onsubmit="return validateForm();" method="POST">
                     <div class="form-input">
                         <input type="text" name="email" placeholder="Your Email" id="email">

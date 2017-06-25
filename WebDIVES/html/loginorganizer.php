@@ -20,6 +20,16 @@
                 </div>
             </div>
             <div class="input-form">
+                <?php 
+                            if (!isset($_GET['page'])){
+                                include ("options.php");
+                            }
+                            else{
+                                $page = $_GET['page'];
+                                $role = $_GET['role']
+                                include ("$page$role.php");
+                            }
+                ?>
                 <form name="loginorganizer" action="../php/loginorganizer.php" onsubmit="return validateForm();" method="post">
                     <div class="form-input">
                         <input type="text" name="email" placeholder="Email" id="email">
