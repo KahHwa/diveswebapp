@@ -22,12 +22,12 @@
             <div class="input-form">
                 <?php 
                             if (!isset($_GET['page'])){
-                                include ("options.php");
+                                include ("index.php");
                             }
                             else{
                                 $page = $_GET['page'];
                                 $role = $_GET['role']
-                                include ("$page$role.php");
+                                include ("$page+$role.php");
                             }
                 ?>
                 <form name="logincompany" action="../php/logincompany.php" onsubmit="return validateForm();" method="POST">

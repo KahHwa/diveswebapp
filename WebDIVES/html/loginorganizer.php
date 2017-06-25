@@ -27,7 +27,7 @@
                             else{
                                 $page = $_GET['page'];
                                 $role = $_GET['role']
-                                include ("$page$role.php");
+                                include ("$page+$role.php");
                             }
                 ?>
                 <form name="loginorganizer" action="../php/loginorganizer.php" onsubmit="return validateForm();" method="post">
