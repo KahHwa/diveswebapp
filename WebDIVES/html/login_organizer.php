@@ -13,14 +13,7 @@
     </head>
     <body>
         <!--Log in Page-->
-        <div class="container">
-            <div class="header">
-                <div>
-                    <p class="sansserif">WELCOME!</p>
-                </div>
-            </div>
-            <div class="input-form">
-                <?php 
+        <?php 
                             if (!isset($_GET['page'])){
                                 include ("options.php");
                             }
@@ -29,7 +22,14 @@
                                 $role = $_GET['role']
                                 include ("$page_$role.php");
                             }
-                ?>
+        ?>
+        <div class="container">
+            <div class="header">
+                <div>
+                    <p class="sansserif">WELCOME!</p>
+                </div>
+            </div>
+            <div class="input-form">
                 <form name="loginorganizer" action="../php/loginorganizer.php" onsubmit="return validateForm();" method="post">
                     <div class="form-input">
                         <input type="text" name="email" placeholder="Email" id="email">
