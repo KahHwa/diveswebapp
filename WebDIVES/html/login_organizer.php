@@ -20,7 +20,7 @@
                             else{
                                 $page = $_GET['page'];
                                 $role = $_GET['role']
-                                include ("$page_$role.php");
+                                include (""$page"_"$role".php");
                             }
         ?>
         <div class="container">

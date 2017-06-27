@@ -25,7 +25,7 @@
                 OR
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="login_company.php?page=login&orle=company">COMPANY</a>
+                <a class="btn btn-default" role="button" href="login_company.php?page=login&role=company">COMPANY</a>
             </div>
         </div>
     </body>
