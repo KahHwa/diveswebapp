@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="login-organizer.php?page=login&role=organizer">JOB ORGANIZER</a>
+                <a class="btn btn-default" role="button" href="login-organizer.php">JOB ORGANIZER</a>
             </div>
             <div class="selector">
                 OR
