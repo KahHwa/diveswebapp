@@ -8,7 +8,7 @@ if (!isset ($_GET['JobId'])){
  $sql2= "SELECT * FROM test_data";
  $qr = mysqli_query($connect,$sql2);
  while ($rs=mysql_fetch_assoc($sql2)){
-     $up = mysqli_query("UPDATE test_data SET Percentage=0.0 WHERE Id=".$rs['Id']);
+     $up = mysqli_query($connect, "UPDATE test_data SET Percentage=0.0 WHERE Id=".$rs['Id']);
  }
 
 $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
@@ -18,7 +18,9 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
     $keyword1 = $result1['Requirement1'];
     $keyword2 = $result1['Requirement2'];
     $keyword3 = $result1['Requirement3'];
-    
+    echo "$keyword1";
+    echo "$keyword2";
+    echo "$keyword3";
     $sql ="SELECT * FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
@@ -82,7 +84,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                   <td><?php echo $res['Skill3']; ?></td>
                   <td><?php echo $res['Percentage']; ?></td>
                 </tr>  
-            <?php $idx +=1;}while($res=mysqli_fetch_assoc($q))?>
+            <?php $idx +=1;}while($result=mysqli_fetch_assoc($q))?>
            </table>
         </div>
         
