@@ -82,7 +82,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                   <td><?php echo $results['Skill3']; ?></td>
                   <td><?php echo $results['Percentage']; ?></td>
                 </tr>  
-            <?php $idx +=1;}while(mysqli_fetch_assoc($results))?>
+            <?php $idx +=1;}while(mysqli_fetch_assoc( $results=mysqli_fetch_assoc($querys)))?>
            </table>
         </div>
         
