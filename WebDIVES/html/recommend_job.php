@@ -8,10 +8,10 @@ if (!isset ($_GET['JobId'])){
  $sql2= "SELECT * FROM test_data";
  $qr = mysqli_connect($connect,$sql2);
  while ($rs=mysql_fetch_assoc($sql2)){
-     $up = "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result['Id'];
+     $update = "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result['Id'];
  }
  while($result=mysqli_fetch_assoc($query)){    
-        $qur= mysqli_query($connect,$up);
+        $qur= mysqli_query($connect,$update);
  }
 
 $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
