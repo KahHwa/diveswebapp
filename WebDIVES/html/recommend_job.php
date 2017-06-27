@@ -40,7 +40,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
         $qur= mysqli_query($connect,$update);
     }
     
-    $sqls ="SELECT Id, Name, Skill1,Skill2,Skill3, ROUND(Percentage,3) AS RoundedPercentage FROM test_data WHERE 
+    $sqls ="SELECT * FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%' ORDER BY Percentage DESC";
