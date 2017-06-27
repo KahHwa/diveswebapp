@@ -10,13 +10,12 @@ if (!isset ($_GET['JobId'])){
  while ($rs=mysql_fetch_assoc($sql2)){
      $update = "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result['Id'];
  }
-
-
  while($result=mysqli_fetch_assoc($query)){
     
         $qur= mysqli_query($connect,$update);
-}
-    $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
+ }
+
+$sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
     if($query1= mysqli_query($connect, $sql1)){
         $result1=mysqli_fetch_assoc($query1);
     }
@@ -36,13 +35,13 @@ if (!isset ($_GET['JobId'])){
         similar_text($result['Skill1'],$keyword1,$percent1);    
         similar_text($result['Skill2'],$keyword2,$percent2);
         similar_text($result['Skill3'],$keyword3,$percent3);
-        $percent =ROUND((($percent1 + $percent2 + $percent3)/3),3);
+        $percent = ($percent1 + $percent2 + $percent3)/3;
         
         $update = "UPDATE test_data SET Percentage=$percent WHERE Id=".$result['Id'];
         $qur= mysqli_query($connect,$update);
     }
     
-    $sqls ="SELECT * FROM test_data WHERE 
+    $sqls ="SELECT Id, Name, Skill1,Skill2,Skill3, ROUND(Percentage,3) AS RoundedPercentage FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%' ORDER BY Percentage DESC";
@@ -86,7 +85,7 @@ if (!isset ($_GET['JobId'])){
                   <td><?php echo $result['Skill1']; ?></td>
                   <td><?php echo $result['Skill2']; ?></td>
                   <td><?php echo $result['Skill3']; ?></td>
-                  <td><?php echo $result['Percentage']; ?></td>
+                  <td><?php echo ROUND($result['Percentage'],3); ?></td>
                 </tr>  
             <?php $idx +=1;}while($result=mysqli_fetch_assoc($q))?>
            </table>
