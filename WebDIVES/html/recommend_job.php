@@ -10,9 +10,9 @@ if (!isset ($_GET['JobId'])){
  while ($rs=mysql_fetch_assoc($sql2)){
      $up = "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result['Id'];
  }
-//  while($result=mysqli_fetch_assoc($query)){    
-//         $qur= mysqli_query($connect,$up);
-//  }
+ while($result=mysqli_fetch_assoc($query)){    
+        $qur= mysqli_query($connect,$up);
+ }
 
 $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
     if($query1= mysqli_query($connect, $sql1)){
@@ -84,7 +84,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                   <td><?php echo $result['Skill1']; ?></td>
                   <td><?php echo $result['Skill2']; ?></td>
                   <td><?php echo $result['Skill3']; ?></td>
-                  <td><?php echo ROUND($result['Percentage'],3); ?></td>
+                  <td><?php echo ROUND(($result['Percentage']),3); ?></td>
                 </tr>  
             <?php $idx +=1;}while($result=mysqli_fetch_assoc($q))?>
            </table>
