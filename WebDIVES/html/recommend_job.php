@@ -80,7 +80,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                   <td><?php echo $results['Skill1']; ?></td>
                   <td><?php echo $results['Skill2']; ?></td>
                   <td><?php echo $results['Skill3']; ?></td>
-                  <td><?php echo $results['Percentage']; ?></td>
+                  <td><?php echo ROUND($results['Percentage'];,3) ?></td>
                 </tr>  
             <?php $idx +=1;}while($results=mysqli_fetch_assoc($querys))?>
            </table>
