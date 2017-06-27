@@ -14,6 +14,16 @@
         <!--Log in Page-->
         <div class="container">
             <div class="header">
+                     <?php 
+                            if (!isset($_GET['page'])){
+                                include ("options.php");
+                            }
+                            else{
+                                $page = $_GET['page'];
+                                $role = $_GET['role'];
+                                include ("options_$page$role.php");
+                            }
+                    ?>
                 <div>
                     <p class="sansserif">Please Choose</p>
                 </div>
