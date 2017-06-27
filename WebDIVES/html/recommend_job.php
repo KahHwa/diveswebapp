@@ -4,13 +4,13 @@ if (!isset ($_GET['JobId'])){
  }
   $connect = mysqli_connect("ap-cdbr-azure-southeast-b.cloudapp.net", "b0ee69da112db5", "55cc88e9", "diveswebapp");  
   
-
+//set percentage to 0.0
  $sql2= "SELECT * FROM test_data";
- $qr = mysqli_query($connect,$sql2);
- while ($rs=mysql_fetch_assoc($sql2)){
-     $up = mysqli_query($connect, "UPDATE test_data SET Percentage=0.0 WHERE Id=".$rs['Id']);
+ $query2 = mysqli_query($connect,$sql2);
+ while ($result2=mysql_fetch_assoc($sql2)){
+    mysqli_query($connect, "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result2['Id']);
  }
-
+//set the keyword of every job
 $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
     if($query1= mysqli_query($connect, $sql1)){
         $result1=mysqli_fetch_assoc($query1);
@@ -18,9 +18,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
     $keyword1 = $result1['Requirement1'];
     $keyword2 = $result1['Requirement2'];
     $keyword3 = $result1['Requirement3'];
-    echo "$keyword1";
-    echo "$keyword2";
-    echo "$keyword3";
+//matching algortithm 
     $sql ="SELECT * FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
@@ -35,15 +33,15 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
         similar_text($result['Skill3'],$keyword3,$percent3);
         $percent = ($percent1 + $percent2 + $percent3)/3;
         $update = "UPDATE test_data SET Percentage=$percent WHERE Id=".$result['Id'];
-        $qur= mysqli_query($connect,$update);
+        $query3= mysqli_query($connect,$update);
     }
     
     $sqls ="SELECT * FROM test_data WHERE 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword1%' OR
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword2%' OR 
     CONCAT(Skill1,Skill2,Skill3) LIKE '%$keyword3%' ORDER BY Percentage DESC";
-    if($q= mysqli_query($connect, $sqls)){
-        $res=mysqli_fetch_assoc($q);
+    if($querys= mysqli_query($connect, $sqls)){
+        $results=mysqli_fetch_assoc($querys);
     }
 ?>
     <h1>Applicant rank for<br> </h1> <h3>Job Id: <?php echo $_GET['JobId']; ?>-Job Position: <?php echo $result1['Position']; ?></h3>
@@ -77,14 +75,14 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                    ?>
                 <tr>
                   <td> <?php echo $idx; ?> </td>
-                  <td><?php echo $res['Id']; ?></td>  
-                  <td><?php echo $res['Name']; ?></td>  
-                  <td><?php echo $res['Skill1']; ?></td>
-                  <td><?php echo $res['Skill2']; ?></td>
-                  <td><?php echo $res['Skill3']; ?></td>
-                  <td><?php echo $res['Percentage']; ?></td>
+                  <td><?php echo $results['Id']; ?></td>  
+                  <td><?php echo $results['Name']; ?></td>  
+                  <td><?php echo $results['Skill1']; ?></td>
+                  <td><?php echo $results['Skill2']; ?></td>
+                  <td><?php echo $results['Skill3']; ?></td>
+                  <td><?php echo $results['Percentage']; ?></td>
                 </tr>  
-            <?php $idx +=1;}while($result=mysqli_fetch_assoc($q))?>
+            <?php $idx +=1;}while(mysqli_fetch_assoc($querys))?>
            </table>
         </div>
         
