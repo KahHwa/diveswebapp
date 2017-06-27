@@ -14,28 +14,18 @@
         <!--Log in Page-->
         <div class="container">
             <div class="header">
-                     <?php 
-                            if (!isset($_GET['page'])){
-                                include ("options.php");
-                            }
-                            else{
-                                $page = $_GET['page'];
-                                $role = $_GET['role'];
-                                include ("options_$page$role.php");
-                            }
-                    ?>
                 <div>
                     <p class="sansserif">Please Choose</p>
                 </div>
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="options.php?page=login&role=organizer">JOB ORGANIZER</a>
+                <a class="btn btn-default" role="button" href="logincompany.html">JOB ORGANIZER</a>
             </div>
             <div class="selector">
                 OR
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="options.php?page=login&role=company">COMPANY</a>
+                <a class="btn btn-default" role="button" href="loginorganizer.html">COMPANY</a>
             </div>
         </div>
     </body>
