@@ -15,6 +15,16 @@
         <!--Log in Page-->
         <div class="container">
             <div class="header">
+                <?php 
+                            if (!isset($_GET['role'])){
+                                include ("options.php");
+                            }
+                            else{
+                                $page = $_GET['page'];
+                                $role = $_GET['role'];
+                                include ("$role-$page.php");
+                            }
+                 ?>
                 <div>
                     <p class="sansserif">WELCOME!</p>
                 </div>
