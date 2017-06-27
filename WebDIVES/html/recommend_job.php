@@ -6,12 +6,9 @@ if (!isset ($_GET['JobId'])){
   
 
  $sql2= "SELECT * FROM test_data";
- $qr = mysqli_connect($connect,$sql2);
+ $qr = mysqli_query($connect,$sql2);
  while ($rs=mysql_fetch_assoc($sql2)){
-     $update = "UPDATE test_data SET Percentage=0.0 WHERE Id=".$result['Id'];
- }
- while($result=mysqli_fetch_assoc($query)){    
-        $qur= mysqli_query($connect,$update);
+     $up = mysqli_query("UPDATE test_data SET Percentage=0.0 WHERE Id=".$rs['Id']);
  }
 
 $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];                                
@@ -35,7 +32,7 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
         similar_text($result['Skill2'],$keyword2,$percent2);
         similar_text($result['Skill3'],$keyword3,$percent3);
         $percent = ($percent1 + $percent2 + $percent3)/3;
-        $update = "UPDATE test_data SET Percentage= ROUND($percent,3); WHERE Id=".$result['Id'];
+        $update = "UPDATE test_data SET Percentage=$percent WHERE Id=".$result['Id'];
         $qur= mysqli_query($connect,$update);
     }
     
@@ -78,14 +75,14 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                    ?>
                 <tr>
                   <td> <?php echo $idx; ?> </td>
-                  <td><?php echo $result['Id']; ?></td>  
-                  <td><?php echo $result['Name']; ?></td>  
-                  <td><?php echo $result['Skill1']; ?></td>
-                  <td><?php echo $result['Skill2']; ?></td>
-                  <td><?php echo $result['Skill3']; ?></td>
-                  <td><?php echo $result['Percentage']; ?></td>
+                  <td><?php echo $res['Id']; ?></td>  
+                  <td><?php echo $res['Name']; ?></td>  
+                  <td><?php echo $res['Skill1']; ?></td>
+                  <td><?php echo $res['Skill2']; ?></td>
+                  <td><?php echo $res['Skill3']; ?></td>
+                  <td><?php echo $res['Percentage']; ?></td>
                 </tr>  
-            <?php $idx +=1;}while($result=mysqli_fetch_assoc($q))?>
+            <?php $idx +=1;}while($res=mysqli_fetch_assoc($q))?>
            </table>
         </div>
         
