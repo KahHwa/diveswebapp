@@ -75,12 +75,12 @@ $sql1= "SELECT * FROM microsoft_job WHERE microsoft_job.Id=".$_GET['JobId'];
                    ?>
                 <tr>
                   <td> <?php echo $idx; ?> </td>
-                  <td><?php echo $result['Id']; ?></td>  
-                  <td><?php echo $result['Name']; ?></td>  
-                  <td><?php echo $result['Skill1']; ?></td>
-                  <td><?php echo $result['Skill2']; ?></td>
-                  <td><?php echo $result['Skill3']; ?></td>
-                  <td><?php echo $result['Percentage']; ?></td>
+                  <td><?php echo $results['Id']; ?></td>  
+                  <td><?php echo $results['Name']; ?></td>  
+                  <td><?php echo $results['Skill1']; ?></td>
+                  <td><?php echo $results['Skill2']; ?></td>
+                  <td><?php echo $results['Skill3']; ?></td>
+                  <td><?php echo $results['Percentage']; ?></td>
                 </tr>  
             <?php $idx +=1;}while(mysqli_fetch_assoc($results))?>
            </table>
