@@ -47,7 +47,7 @@
                 <a class="btn btn-default" role="button" href="signuporganizer.html">Create an Account</a>
             </div>
             <div class="back">
-                <a href="options.html">Back</a>
+                <a href="options.php">Back</a>
             </div>
         </div>
     </body>
