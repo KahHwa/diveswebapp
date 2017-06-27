@@ -19,7 +19,7 @@
                             }
                             else{
                                 $page = $_GET['page'];
-                                $role = $_GET['role']
+                                $role = $_GET['role'];
                                 include ("options_$page$role.php");
                             }
         ?>
