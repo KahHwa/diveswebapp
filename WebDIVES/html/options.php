@@ -15,14 +15,7 @@
         <div class="container">
             <div class="header">
                 <?php 
-                            if (!isset($_GET['role'])){
-                                include ("index.php");
-                            }
-                            else{
-                                $page = $_GET['page'];
-                                $role = $_GET['role'];
-                                include ("$role-$page.php");
-                            }
+                     include ("index.php");
                  ?>
                 <!--<div>
                     <p class="sansserif">Please Choose</p>
