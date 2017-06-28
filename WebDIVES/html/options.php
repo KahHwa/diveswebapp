@@ -29,13 +29,13 @@
                 </div>
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="logincompany.html">JOB ORGANIZER</a>
+                <a class="btn btn-default" role="button" href="../webdives/html/login-organizer.php?page=login&role=organizer">JOB ORGANIZER</a>
             </div>
             <div class="selector">
                 OR
             </div>
             <div class="selector">
-                <a class="btn btn-default" role="button" href="loginorganizer.html">COMPANY</a>
+                <a class="btn btn-default" role="button" href="../webdives/html/login-company.php?page=login&role=company">COMPANY</a>
             </div>
         </div>
     </body>
