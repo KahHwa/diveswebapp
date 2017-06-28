@@ -17,7 +17,7 @@
             <div class="header">
                  <?php 
                             if (!isset($_GET['role'])){
-                                include ("options.php");
+                                include ("index.php");
                             }
                             else{
                                 $page = $_GET['page'];
