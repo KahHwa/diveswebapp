@@ -15,7 +15,7 @@
         <div class="container">
             <div class="header">
                 <?php 
-                     include ("index.php");
+                     include ("../webdives/html/index.php");
                  ?>
                 <!--<div>
                     <p class="sansserif">Please Choose</p>
